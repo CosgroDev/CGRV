@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
@@ -15,7 +15,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "📊",
     github: null,
-    demo: null,
   },
   {
     id: "02",
@@ -27,7 +26,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "🎯",
     github: null,
-    demo: null,
   },
   {
     id: "03",
@@ -39,7 +37,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "🔍",
     github: null,
-    demo: null,
   },
   {
     id: "04",
@@ -51,7 +48,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "📋",
     github: null,
-    demo: null,
   },
   {
     id: "05",
@@ -63,7 +59,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "✅",
     github: null,
-    demo: null,
   },
   {
     id: "06",
@@ -75,19 +70,6 @@ const projects = [
     statusColor: "green" as const,
     icon: "🏆",
     github: null,
-    demo: null,
-  },
-  {
-    id: "07",
-    title: "This Portfolio",
-    description:
-      "My personal portfolio site, built with Next.js, TypeScript, and an editorial design. An excuse to learn modern web dev while building something genuinely useful.",
-    tags: ["Next.js", "TypeScript", "Editorial", "Web Dev"],
-    status: "Complete",
-    statusColor: "green" as const,
-    icon: "✦",
-    github: "https://github.com/CosgroDev/CGRV",
-    demo: null,
   },
 ];
 
@@ -136,24 +118,14 @@ export function Projects() {
                 ))}
               </div>
             </CardContent>
-            {(project.github || project.demo) && (
+            {project.github && (
               <CardFooter>
-                {project.github && (
-                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="sm">
-                      <Github size={12} className="mr-2" />
-                      Code
-                    </Button>
-                  </Link>
-                )}
-                {project.demo && (
-                  <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <Button variant="secondary" size="sm">
-                      <ExternalLink size={12} className="mr-2" />
-                      Demo
-                    </Button>
-                  </Link>
-                )}
+                <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="sm">
+                    <Github size={12} className="mr-2" />
+                    Code
+                  </Button>
+                </Link>
               </CardFooter>
             )}
           </Card>
