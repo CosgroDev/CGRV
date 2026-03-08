@@ -25,12 +25,21 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://cgrv.co.uk",
     siteName: "Dale Cosgrove",
+    images: [
+      {
+        url: "https://cgrv.co.uk/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Dale Cosgrove — Food Safety Professional & Tech Enthusiast",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
     description:
       "Food Safety Professional turned data-driven tech enthusiast. Projects & Performance specialist at FBC UK. Explore the portfolio.",
+    images: ["https://cgrv.co.uk/opengraph-image"],
   },
 };
 
