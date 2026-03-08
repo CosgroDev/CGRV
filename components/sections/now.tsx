@@ -23,12 +23,12 @@ const focuses = [
   },
   {
     id: "03",
-    label: "This Portfolio",
+    label: "West Green Darts",
     accent: "#F59E0B",
     body: [
-      `Learning modern web development by building this site from scratch. Next.js, TypeScript, and a design system built to be genuinely useful, not just a template.`,
+      `Built and actively developing a mobile-first web app for managing West Green Darts team. The app handles fixtures, live 501 scoring with finish guidance, player profiles, and tracks 18+ performance metrics per player. Currently in active use by the team, with ongoing refinements to the scoring engine and statistics dashboard based on real-world feedback.`,
     ],
-    tags: ["Next.js", "TypeScript", "Web Dev"],
+    tags: ["Next.js", "TypeScript", "SQLite", "PWA"],
   },
 ];
 

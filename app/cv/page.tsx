@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench } from "lucide-react";
+import { Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench, Clock } from "lucide-react";
 import Link from "next/link";
 import { durationFromPeriod } from "@/lib/dates";
 import { PrintCVButton } from "@/components/print-cv-button";
@@ -172,6 +172,13 @@ const formalEducation = [
   },
 ];
 
+const companyColors: Record<string, string> = {
+  "Fox's Burton's Companies (FBC UK)": "#22c55e",
+  "Fox's Biscuits": "#F59E0B",
+  "Yorkshire Premier Meat": "#2E3A8C",
+  "DHL": "#E63946",
+};
+
 const skillGroups = [
   {
     category: "Industry Knowledge",
@@ -328,6 +335,53 @@ export default function CVPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Career Timeline */}
+        <div>
+          <div className="flex items-center gap-3 mb-8">
+            <Clock size={18} className="text-[#22c55e]" />
+            <h2
+              className="text-xl font-black text-[#1C1C1A]"
+              style={{ fontFamily: '"Syne", sans-serif' }}
+            >
+              Career Timeline
+            </h2>
+          </div>
+          <div className="relative pl-8">
+            <div className="absolute left-3 top-2 bottom-2 w-0.5 bg-[#D5D1C9]" />
+            <div className="space-y-7">
+              {experience.map((job, index) => {
+                const color = companyColors[job.company] ?? "#7A7870";
+                return (
+                  <div key={index} className="relative">
+                    <div
+                      className="absolute -left-8 top-1 w-4 h-4 rounded-full border-2 bg-white"
+                      style={{ borderColor: color }}
+                    />
+                    <p
+                      className="text-[10px] font-medium uppercase tracking-widest text-[#7A7870] mb-0.5"
+                      style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    >
+                      {job.period}
+                    </p>
+                    <p
+                      className="text-sm font-black text-[#1C1C1A] leading-tight"
+                      style={{ fontFamily: '"Syne", sans-serif' }}
+                    >
+                      {job.role}
+                    </p>
+                    <p
+                      className="text-sm font-semibold"
+                      style={{ color, fontFamily: '"DM Sans", sans-serif' }}
+                    >
+                      {job.company}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         {/* Experience */}
         <div>
