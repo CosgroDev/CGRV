@@ -67,6 +67,18 @@ const projects = [
   },
   {
     id: "06",
+    title: "West Green Darts",
+    description:
+      "A mobile-first web application for managing a darts team, covering fixtures, live game scoring, player profiles, and comprehensive statistics. Features live 501 scoring with undo functionality and finish guidance, PIN-based team access, season organisation, and tracking of 18+ performance metrics per player. Includes a team dashboard, CSV data export, and progressive web app support optimised for touch devices.",
+    tags: ["Next.js", "TypeScript", "SQLite", "PWA"],
+    status: "Complete",
+    statusColor: "green" as const,
+    icon: "🏆",
+    github: null,
+    demo: null,
+  },
+  {
+    id: "07",
     title: "This Portfolio",
     description:
       "My personal portfolio site, built with Next.js, TypeScript, and an editorial design. An excuse to learn modern web dev while building something genuinely useful.",
