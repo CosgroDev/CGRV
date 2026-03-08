@@ -1,25 +1,10 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Dale Cosgrove — Food Safety Professional & Tech Enthusiast";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function Image() {
-  const css = await fetch(
-    "https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap",
-    { headers: { "User-Agent": "Mozilla/5.0" } }
-  ).then((r) => r.text());
-
-  const fontUrl = css.match(/src: url\((.+?)\) format\('woff2'\)/)?.[1];
-  const fontData = fontUrl
-    ? await fetch(fontUrl).then((r) => r.arrayBuffer())
-    : null;
-
-  const fonts = fontData
-    ? [{ name: "Syne", data: fontData, style: "normal" as const, weight: 800 as const }]
-    : [];
-
+export default function Image() {
   return new ImageResponse(
     (
       <div
@@ -31,7 +16,7 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "52px 80px 48px",
-          fontFamily: fontData ? "Syne" : "sans-serif",
+          fontFamily: "sans-serif",
           position: "relative",
           overflow: "hidden",
         }}
@@ -62,7 +47,7 @@ export default async function Image() {
           }}
         />
 
-        {/* Top section: category label */}
+        {/* Top: category label */}
         <div
           style={{
             display: "flex",
@@ -81,7 +66,7 @@ export default async function Image() {
           <span
             style={{
               fontSize: "13px",
-              fontWeight: 500,
+              fontWeight: 600,
               color: "#7A7870",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -91,14 +76,13 @@ export default async function Image() {
           </span>
         </div>
 
-        {/* Middle section: name + headline */}
+        {/* Middle: name + headline */}
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          {/* DALE COSGROVE */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
               style={{
                 fontSize: "122px",
-                fontWeight: 800,
+                fontWeight: 900,
                 color: "#1C1C1A",
                 lineHeight: 0.88,
                 letterSpacing: "-3px",
@@ -110,7 +94,7 @@ export default async function Image() {
             <div
               style={{
                 fontSize: "122px",
-                fontWeight: 800,
+                fontWeight: 900,
                 lineHeight: 0.88,
                 letterSpacing: "-3px",
                 display: "flex",
@@ -127,22 +111,22 @@ export default async function Image() {
             </div>
           </div>
 
-          {/* Headline — visually distinct, high contrast */}
+          {/* Headline — dark inverted pill */}
           <div
             style={{
               display: "flex",
-              alignItems: "stretch",
-              gap: "0px",
+              alignItems: "center",
               background: "#1C1C1A",
               alignSelf: "flex-start",
-              padding: "10px 20px 10px 16px",
+              padding: "10px 20px 10px 14px",
+              gap: "14px",
             }}
           >
             <div
               style={{
                 width: "5px",
+                height: "34px",
                 background: "#22c55e",
-                marginRight: "14px",
                 display: "flex",
                 flexShrink: 0,
               }}
@@ -160,20 +144,18 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Bottom section: CTA */}
+        {/* Bottom: CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "10px",
               background: "#22c55e",
               color: "#1C1C1A",
               padding: "14px 28px",
               borderRadius: "4px",
               fontSize: "18px",
               fontWeight: 800,
-              letterSpacing: "-0.2px",
             }}
           >
             View Portfolio →
@@ -190,6 +172,6 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { ...size, fonts }
+    size
   );
 }
