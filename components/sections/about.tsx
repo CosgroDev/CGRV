@@ -37,7 +37,7 @@ export function About() {
           className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
           style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          01 — About
+          01 / About
         </p>
         <h2
           className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
@@ -60,23 +60,23 @@ export function About() {
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
               <p>
-                Hi, I&apos;m Dale — a food safety professional who loves everything
+                Hi, I&apos;m Dale, a food safety professional who loves everything
                 technology. I currently work in a Projects &amp; Performance role at FBC UK,
                 one of the UK&apos;s largest biscuit manufacturers.
               </p>
               <p>
                 My role sits at the intersection of food safety, data analysis, systems
-                thinking, and project management — giving me a unique perspective on how
+                thinking, and project management, giving me a unique perspective on how
                 technology can make food safer and operations smarter.
               </p>
               <p>
                 I&apos;ve spent {ppYears} years working with the{" "}
-                <span className="font-semibold">Microsoft Power Platform</span> — building
+                <span className="font-semibold">Microsoft Power Platform</span>, building
                 production Power Apps and Power Automate flows that are actively used
                 across the business every day.
               </p>
               <p>
-                Outside of work, I explore tech, build things, and write about what I learn —
+                Outside of work, I explore tech, build things, and write about what I learn,
                 always looking for the next step forward.
               </p>
             </div>

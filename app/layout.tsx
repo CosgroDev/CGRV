@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
   description:
-    "Portfolio of Dale Cosgrove — Food Safety Professional & Tech Enthusiast. Projects & Performance specialist at FBC UK with a passion for technology, data, and innovation.",
+    "Portfolio of Dale Cosgrove, Food Safety Professional and Tech Enthusiast. Projects & Performance specialist at FBC UK with a passion for technology, data, and innovation.",
   keywords: [
     "Dale Cosgrove",
     "Food Safety",

@@ -16,7 +16,7 @@ export function Footer() {
               Dale <span className="text-[#22c55e]">Cosgrove</span>
             </p>
             <p className="text-sm text-[#7A7870]">
-              © {year} — All rights reserved
+              © {year} All rights reserved
             </p>
           </div>
 

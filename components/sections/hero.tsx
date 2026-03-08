@@ -63,7 +63,7 @@ export function Hero() {
         </div>
         <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#1C1C1A] shrink-0">
           <Image
-            src="/avatar.png"
+            src="/A178F8E3-B240-4451-A130-1748FF5A6504.png"
             alt="Dale Cosgrove"
             width={96}
             height={96}

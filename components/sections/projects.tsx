@@ -99,7 +99,7 @@ export function Projects() {
           className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
           style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          02 — Projects
+          02 / Projects
         </p>
         <h2
           className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"

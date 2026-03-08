@@ -11,7 +11,7 @@ export function Contact() {
           className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
           style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          04 — Contact
+          04 / Contact
         </p>
         <h2
           className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
@@ -33,7 +33,7 @@ export function Contact() {
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
               Whether you&apos;re a recruiter, a fellow tech enthusiast, or someone curious
-              about food safety and technology — I&apos;d love to hear from you.
+              about food safety and technology. I&apos;d love to hear from you.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

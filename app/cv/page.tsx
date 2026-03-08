@@ -8,7 +8,7 @@ import { durationFromPeriod } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "CV | Dale Cosgrove",
-  description: "Curriculum Vitae of Dale Cosgrove — Quality, Food Safety & Supply Chain Professional",
+  description: "Curriculum Vitae of Dale Cosgrove, Quality, Food Safety & Supply Chain Professional",
 };
 
 const experience = [
@@ -165,7 +165,7 @@ const formalEducation = [
     period: "2009 – 2011",
   },
   {
-    qualification: "BTEC National Diploma — Art & Design, Photography, Graphics & Fine Art",
+    qualification: "BTEC National Diploma: Art & Design, Photography, Graphics & Fine Art",
     institution: "Barnsley College",
     period: "2007 – 2009",
   },
@@ -315,7 +315,7 @@ export default function CVPage() {
                 controls across manufacturing operations.
               </p>
               <p>
-                My approach is centred on making systems work better — simplifying, structuring,
+                My approach is centred on making systems work better: simplifying, structuring,
                 and making processes easier for teams to use while still meeting modern food
                 safety and quality standards. A key part of my work is turning day-to-day
                 factory activity into structured, trendable data that actually tells a story:

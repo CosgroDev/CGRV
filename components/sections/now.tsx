@@ -42,7 +42,7 @@ export function Now() {
           className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
           style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          02 — Now
+          02 / Now
         </p>
         <h2
           className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
@@ -60,7 +60,7 @@ export function Now() {
       >
         <p className="text-sm text-[#1C1C1A] leading-relaxed">
           <span className="font-bold">Microsoft Power Platform</span> has been central to my work for{" "}
-          <span className="font-bold text-[#22c55e]">{ppYears} years</span> — building
+          <span className="font-bold text-[#22c55e]">{ppYears} years</span>, building
           production Power Apps and Power Automate flows that are actively used
           across the business every day.
         </p>
