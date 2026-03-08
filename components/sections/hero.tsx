@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MapPin, Briefcase } from "lucide-react";
+import Image from "next/image";
 import { yearsFrom } from "@/lib/dates";
 
 const CAREER_START = new Date(2011, 4, 1);       // May 2011 — Yorkshire Premier Meat
@@ -53,11 +54,23 @@ export function Hero() {
     <section className="min-h-[90vh] flex flex-col justify-center px-4 py-16 max-w-5xl mx-auto">
       {/* Label strip */}
       <div
-        className="flex items-center gap-3 mb-10 text-xs font-medium text-[#7A7870] uppercase tracking-widest"
+        className="flex items-center justify-between gap-3 mb-10 text-xs font-medium text-[#7A7870] uppercase tracking-widest"
         style={{ fontFamily: '"DM Sans", sans-serif' }}
       >
-        <span className="w-8 h-[2px] bg-[#1C1C1A] inline-block" />
-        <span>Quality · Food Safety · Supply Chain</span>
+        <div className="flex items-center gap-3">
+          <span className="w-8 h-[2px] bg-[#1C1C1A] inline-block" />
+          <span>Quality · Food Safety · Supply Chain</span>
+        </div>
+        <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#1C1C1A] shrink-0">
+          <Image
+            src="/avatar.png"
+            alt="Dale Cosgrove"
+            width={96}
+            height={96}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
       </div>
 
       {/* Main headline — mixed colour editorial treatment */}
