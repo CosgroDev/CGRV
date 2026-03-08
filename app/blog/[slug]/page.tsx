@@ -13,35 +13,35 @@ const pixelFont = { fontFamily: '"Press Start 2P", monospace' };
 const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="text-[#22c55e] text-[10px] mt-8 mb-3 leading-relaxed"
+      className="text-[#22c55e] text-[12px] mt-8 mb-3 leading-relaxed"
       style={pixelFont}
       {...props}
     />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="text-[#f0f0f0] text-[9px] mt-6 mb-2 leading-relaxed"
+      className="text-[#f0f0f0] text-[11px] mt-6 mb-2 leading-relaxed"
       style={pixelFont}
       {...props}
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className="text-[#f0f0f0] text-[9px] leading-loose mb-4"
+      className="text-[#f0f0f0] text-[11px] leading-loose mb-4"
       style={pixelFont}
       {...props}
     />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
-      className="text-[#f0f0f0] text-[9px] leading-loose mb-4 space-y-2 pl-4"
+      className="text-[#f0f0f0] text-[11px] leading-loose mb-4 space-y-2 pl-4"
       style={pixelFont}
       {...props}
     />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className="text-[#f0f0f0] text-[9px] leading-loose mb-4 space-y-2 pl-4 list-decimal"
+      className="text-[#f0f0f0] text-[11px] leading-loose mb-4 space-y-2 pl-4 list-decimal"
       style={pixelFont}
       {...props}
     />
@@ -57,7 +57,7 @@ const mdxComponents = {
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className="bg-[#1a1a1a] text-[#22c55e] px-1.5 py-0.5 rounded text-[8px]"
+      className="bg-[#1a1a1a] text-[#22c55e] px-1.5 py-0.5 rounded text-[10px]"
       style={pixelFont}
       {...props}
     />
