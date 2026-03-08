@@ -20,15 +20,15 @@ const posts: {
   tags: string[];
   readTime: string;
 }[] = [
-  // Example post (uncomment and customise when ready):
-  // {
-  //   slug: "why-food-safety-needs-tech",
-  //   title: "WHY FOOD SAFETY NEEDS BETTER TECH",
-  //   description: "The food industry is still heavily reliant on paper-based systems. Here's why that needs to change, and what better looks like.",
-  //   date: "2025-01-01",
-  //   tags: ["FOOD SAFETY", "TECH", "DIGITALISATION"],
-  //   readTime: "5 MIN READ",
-  // },
+  {
+    slug: "power-automate-automation-microsoft-365",
+    title: "POWER AUTOMATE: THE QUIET ENGINE BEHIND M365 AUTOMATION",
+    description:
+      "Teams notifications, email alerts, Adaptive Cards, SharePoint integration — Power Automate is the most underused tool in most M365 environments.",
+    date: "2026-03-08",
+    tags: ["MICROSOFT 365", "POWER AUTOMATE", "AUTOMATION"],
+    readTime: "6 MIN READ",
+  },
 ];
 
 export default function BlogPage() {
