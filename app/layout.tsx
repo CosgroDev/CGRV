@@ -44,6 +44,21 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dale Cosgrove",
+  url: "https://cgrv.co.uk",
+  jobTitle: "Projects & Performance Specialist",
+  worksFor: {
+    "@type": "Organization",
+    name: "FBC UK",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/dale-cosgrove-738a18a4",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +68,10 @@ export default function RootLayout({
     <html lang="en">
       <GoogleAnalytics />
       <body className="min-h-screen flex flex-col bg-[#F6F4EF]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

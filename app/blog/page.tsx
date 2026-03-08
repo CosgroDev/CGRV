@@ -4,32 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog | Dale Cosgrove",
   description: "Thoughts on food safety, technology, data, and everything in between.",
 };
-
-// Posts will be added here as you write them
-// Each post: { slug, title, description, date, tags, readTime }
-const posts: {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  tags: string[];
-  readTime: string;
-}[] = [
-  {
-    slug: "power-automate-automation-microsoft-365",
-    title: "POWER AUTOMATE: THE QUIET ENGINE BEHIND M365 AUTOMATION",
-    description:
-      "Teams notifications, email alerts, Adaptive Cards, SharePoint integration — Power Automate is the most underused tool in most M365 environments.",
-    date: "2026-03-08",
-    tags: ["MICROSOFT 365", "POWER AUTOMATE", "AUTOMATION"],
-    readTime: "6 MIN READ",
-  },
-];
 
 export default function BlogPage() {
   return (

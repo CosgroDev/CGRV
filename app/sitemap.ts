@@ -1,11 +1,7 @@
 import type { MetadataRoute } from "next";
+import { posts } from "@/lib/posts";
 
 const BASE_URL = "https://cgrv.co.uk";
-
-// Keep in sync with posts in app/blog/[slug]/page.tsx
-const blogSlugs = [
-  "power-automate-automation-microsoft-365",
-];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -29,9 +25,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: new Date(),
+  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: "yearly",
     priority: 0.6,
   }));
