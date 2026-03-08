@@ -40,6 +40,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Blog pixel divider */
+.pixel-divider {
+  border: none;
+  height: 2px;
+  background: #333333;
+  margin: 1.5rem 0;
+}
+
 /* Editorial dividers */
 .editorial-divider {
   border: none;
