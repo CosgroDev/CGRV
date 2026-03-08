@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench } from "lucide-react";
+import { Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench } from "lucide-react";
 import Link from "next/link";
 import { durationFromPeriod } from "@/lib/dates";
+import { PrintCVButton } from "@/components/print-cv-button";
 
 export const metadata: Metadata = {
   title: "CV | Dale Cosgrove",
@@ -274,7 +275,7 @@ export default function CVPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 shrink-0">
+          <div className="flex flex-col gap-2 shrink-0 no-print">
             <Link href="mailto:dale@cgrv.co.uk">
               <Button variant="ghost" size="sm" className="w-full sm:w-auto">
                 <Mail size={12} className="mr-2" />
@@ -287,10 +288,7 @@ export default function CVPage() {
                 LinkedIn
               </Button>
             </Link>
-            <Button variant="primary" size="sm" className="w-full sm:w-auto" disabled>
-              <Download size={12} className="mr-2" />
-              PDF (Soon)
-            </Button>
+            <PrintCVButton />
           </div>
         </div>
         <div className="editorial-divider" />
@@ -525,7 +523,7 @@ export default function CVPage() {
         </div>
 
         {/* Bottom CTA */}
-        <Card variant="green" className="text-center">
+        <Card variant="green" className="text-center no-print">
           <CardContent className="py-8">
             <p
               className="text-lg font-bold text-[#1C1C1A] mb-6"

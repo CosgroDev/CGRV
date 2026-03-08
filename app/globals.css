@@ -93,3 +93,28 @@ body {
 .float-anim {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Print / PDF styles */
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  /* Avoid breaking cards across pages */
+  .card-print-safe {
+    break-inside: avoid;
+  }
+}
