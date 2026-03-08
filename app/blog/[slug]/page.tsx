@@ -1,13 +1,86 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
-import { posts, getPost } from "@/lib/posts";
+import { getPosts, getPost } from "@/lib/posts";
+
+const pixelFont = { fontFamily: '"Press Start 2P", monospace' };
+
+// MDX elements styled to match the blog's pixel aesthetic
+const mdxComponents = {
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2
+      className="text-[#22c55e] text-[10px] mt-8 mb-3 leading-relaxed"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3
+      className="text-[#f0f0f0] text-[9px] mt-6 mb-2 leading-relaxed"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+      className="text-[#f0f0f0] text-[9px] leading-loose mb-4"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
+    <ul
+      className="text-[#f0f0f0] text-[9px] leading-loose mb-4 space-y-2 pl-4"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+    <ol
+      className="text-[#f0f0f0] text-[9px] leading-loose mb-4 space-y-2 pl-4 list-decimal"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
+    <li className="before:content-['▸'] before:text-[#22c55e] before:mr-2" {...props} />
+  ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong className="text-[#22c55e]" {...props} />
+  ),
+  em: (props: React.HTMLAttributes<HTMLElement>) => (
+    <em className="text-[#f0f0f0] not-italic border-b border-[#22c55e]" {...props} />
+  ),
+  code: (props: React.HTMLAttributes<HTMLElement>) => (
+    <code
+      className="bg-[#1a1a1a] text-[#22c55e] px-1.5 py-0.5 rounded text-[8px]"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
+    <pre
+      className="bg-[#1a1a1a] border border-[#333333] rounded p-4 overflow-x-auto mb-4 text-[8px] text-[#22c55e] leading-relaxed"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  blockquote: (props: React.HTMLAttributes<HTMLElement>) => (
+    <blockquote
+      className="border-l-2 border-[#22c55e] pl-4 text-[#888888] text-[9px] leading-loose mb-4 italic"
+      style={pixelFont}
+      {...props}
+    />
+  ),
+  hr: () => <div className="pixel-divider my-6" />,
+};
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  return getPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -81,13 +154,15 @@ export default async function BlogPostPage({
 
         <h1
           className="text-[#f0f0f0] text-base sm:text-lg mb-6 leading-relaxed"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+          style={pixelFont}
         >
           {post.title}
         </h1>
 
-        <div className="flex flex-wrap items-center gap-4 text-[#888888] text-[7px] mb-4"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}>
+        <div
+          className="flex flex-wrap items-center gap-4 text-[#888888] text-[7px] mb-4"
+          style={pixelFont}
+        >
           <div className="flex items-center gap-2">
             <Calendar size={10} />
             <span>{post.date}</span>
@@ -101,14 +176,9 @@ export default async function BlogPostPage({
         <div className="pixel-divider" />
       </div>
 
-      {/* Content */}
-      <article
-        className="text-[#f0f0f0] text-[9px] leading-loose space-y-4"
-        style={{ fontFamily: '"Press Start 2P", monospace' }}
-      >
-        {post.content.split("\n\n").map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
+      {/* MDX Content */}
+      <article>
+        <MDXRemote source={post.content} components={mdxComponents} />
       </article>
 
       {/* Footer */}

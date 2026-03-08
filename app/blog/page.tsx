@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { posts } from "@/lib/posts";
+import { getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog | Dale Cosgrove",
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getPosts();
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       {/* Header */}

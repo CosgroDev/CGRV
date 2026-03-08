@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { posts } from "@/lib/posts";
+import { getPosts } from "@/lib/posts";
 
 const BASE_URL = "https://cgrv.co.uk";
 
@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+  const blogPages: MetadataRoute.Sitemap = getPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "yearly",
