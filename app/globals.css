@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --background-card: #111111;
+  --foreground: #f0f0f0;
+  --foreground-muted: #888888;
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --secondary: #fbbf24;
+  --border: #333333;
+  --border-bright: #22c55e;
+  --shadow: #22c55e;
+  --shadow-dark: #000000;
+  --pixel-size: 4px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  line-height: 2;
+  image-rendering: pixelated;
+  overflow-x: hidden;
+}
+
+/* 8-bit pixel border utility */
+.bit-border {
+  border: 2px solid var(--border);
+  box-shadow: var(--pixel-size) var(--pixel-size) 0 var(--border);
+}
+
+.bit-border-green {
+  border: 2px solid var(--primary);
+  box-shadow: var(--pixel-size) var(--pixel-size) 0 var(--primary);
+}
+
+.bit-border-yellow {
+  border: 2px solid var(--secondary);
+  box-shadow: var(--pixel-size) var(--pixel-size) 0 var(--secondary);
+}
+
+/* Scanline overlay effect */
+.scanlines::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Pixel cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--primary);
+}
+
+/* Pixel grid background pattern */
+.pixel-grid-bg {
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 2px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: none;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: var(--background);
+}
+
+/* Text glow for headings */
+.text-glow {
+  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+/* Pixel art sprite animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Section divider */
+.pixel-divider {
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--primary) 0px,
+    var(--primary) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  margin: 2rem 0;
+}
