@@ -5,12 +5,12 @@ const POWER_PLATFORM_START = new Date(2020, 2, 1); // March 2020
 const focuses = [
   {
     id: "01",
-    label: "AI Document Intelligence",
+    label: "AI-Augmented Learning",
     accent: "#22c55e",
     body: [
-      `Using AI to extract structured data from customer and supplier standards, then cross-referencing those requirements against existing processes to surface compliance gaps and audit readiness. The output is insight-driven rather than document-driven, making audits less reactive and more evidence-based.`,
+      `AI has fundamentally changed how fast I can pick things up. The skill I've built isn't just using AI tools. It's knowing how to work with them effectively: structuring problems clearly, iterating on outputs, and critically evaluating what comes back rather than accepting it at face value. That approach has let me move into Python, web development, and data pipeline work far faster than I could have otherwise. AI acts as a tutor, a sounding board, and a collaborator. Learning to use it well is its own transferable skill.`,
     ],
-    tags: ["LLMs", "Document Parsing", "Gap Analysis", "Audit Readiness"],
+    tags: ["Prompt Engineering", "Critical Thinking", "Self-Directed Learning", "Python", "Web Dev"],
   },
   {
     id: "02",
