@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="mailto:your@email.com"
+              href="mailto:dale@cgrv.co.uk"
               className="flex items-center gap-2 text-[#888888] hover:text-[#22c55e] transition-colors border-2 border-[#333333] px-3 py-2 hover:border-[#22c55e] text-[8px]"
               style={{ fontFamily: '"Press Start 2P", monospace' }}
               aria-label="Email"

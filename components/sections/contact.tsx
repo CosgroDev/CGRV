@@ -40,7 +40,7 @@ export function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="mailto:your@email.com"
+                href="mailto:dale@cgrv.co.uk"
                 className="flex-1"
               >
                 <Button variant="primary" size="md" className="w-full">

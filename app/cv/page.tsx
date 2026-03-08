@@ -131,7 +131,7 @@ export default function CVPage() {
           </div>
 
           <div className="flex flex-col gap-3 shrink-0">
-            <Link href="mailto:your@email.com">
+            <Link href="mailto:dale@cgrv.co.uk">
               <Button variant="ghost" size="sm" className="w-full sm:w-auto">
                 <Mail size={10} className="mr-2" />
                 EMAIL
@@ -340,7 +340,7 @@ export default function CVPage() {
               INTERESTED IN WORKING TOGETHER?
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="mailto:your@email.com">
+              <Link href="mailto:dale@cgrv.co.uk">
                 <Button variant="primary" size="md">
                   <Mail size={12} className="mr-2" />
                   GET IN TOUCH
