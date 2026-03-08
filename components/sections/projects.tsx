@@ -7,10 +7,10 @@ import Link from "next/link";
 const projects = [
   {
     id: "01",
-    title: "Food Safety Dashboard",
+    title: "Food Safety Data Transformation",
     description:
-      "An internal data dashboard built to visualise food safety KPIs, audit results, and non-conformance trends across production lines. Transforms spreadsheet chaos into actionable insights.",
-    tags: ["Data", "Excel", "Analysis", "Food Safety"],
+      "Developed tools and dashboards that transform operational data from audits, incidents, and performance indicators into structured datasets for analysis and reporting. Turns day-to-day factory activity into measurable trends that leadership teams can use to identify risks, prioritise improvements, and measure progress. The broader goal is to move quality and food safety from reactive reporting toward proactive risk management.",
+    tags: ["Data Analysis", "Dashboards", "Food Safety", "Reporting"],
     status: "Complete",
     statusColor: "green" as const,
     icon: "📊",
@@ -19,33 +19,57 @@ const projects = [
   },
   {
     id: "02",
-    title: "PM Framework Toolkit",
+    title: "121 Darts Challenge App",
     description:
-      "A structured project management framework designed for food manufacturing environments. Includes templates, KPI tracking systems, and stage-gate processes tailored to regulated industries.",
-    tags: ["Project Mgmt", "Process", "Frameworks", "Docs"],
-    status: "Ongoing",
-    statusColor: "yellow" as const,
-    icon: "🗂️",
+      "Designed and built a desktop application that helps players practice the 121 checkout challenge while tracking performance metrics. The app records checkouts, darts used, success rates, and player statistics. It also suggests optimal checkout routes and visualises targets on a dartboard graphic, with player data stored for analysis to track improvement over time. This project explores the intersection of sports analytics and software development.",
+    tags: ["Python", "Desktop App", "Sports Analytics", "Data"],
+    status: "Complete",
+    statusColor: "green" as const,
+    icon: "🎯",
     github: null,
     demo: null,
   },
   {
     id: "03",
-    title: "HACCP Digital System",
+    title: "Complaints Insight Engine",
     description:
-      "Digitising and modernising a traditional paper-based HACCP system. Exploring tools to make critical control point monitoring faster, more reliable, and audit-ready from day one.",
-    tags: ["HACCP", "Digitalisation", "Food Safety", "Systems"],
-    status: "In Progress",
-    statusColor: "yellow" as const,
-    icon: "🔬",
+      "Built a data analysis pipeline using Python to explore complaint trends across multiple manufacturing sites. Rather than simply counting complaints, the system analyses complaint narratives using topic modelling and clustering techniques to identify recurring themes and hidden patterns. The goal is to move beyond surface metrics and uncover deeper insights that can inform product improvement, manufacturing changes, and preventative actions.",
+    tags: ["Python", "NLP", "Topic Modelling", "Manufacturing"],
+    status: "Complete",
+    statusColor: "green" as const,
+    icon: "🔍",
     github: null,
     demo: null,
   },
   {
     id: "04",
+    title: "Audit and Incident Management",
+    description:
+      "Created a platform to manage internal audits, incidents, and corrective actions in a single structured environment. Teams can raise issues, assign ownership, track corrective actions, and monitor closure timelines. By linking audits and incidents to root cause analysis and corrective actions, the system improves visibility of recurring issues and helps leadership understand where systemic improvements are required.",
+    tags: ["Food Safety", "Systems", "Compliance", "Manufacturing"],
+    status: "Complete",
+    statusColor: "green" as const,
+    icon: "📋",
+    github: null,
+    demo: null,
+  },
+  {
+    id: "05",
+    title: "Supplier Assurance Stage and Gate",
+    description:
+      "Developed a digital stage-gate system to manage the approval of new raw materials and packaging. The application guides users through structured approval stages, ensuring key technical, quality, and regulatory checks are completed before materials are introduced to production. Each gate captures approvals, documentation, and risk assessments, creating a full audit trail with logic for conditional steps based on material type and applicability.",
+    tags: ["Compliance", "Food Safety", "Workflow", "Approvals"],
+    status: "Complete",
+    statusColor: "green" as const,
+    icon: "✅",
+    github: null,
+    demo: null,
+  },
+  {
+    id: "06",
     title: "This Portfolio",
     description:
-      "My personal portfolio site — built with Next.js, TypeScript, and an editorial design. An excuse to learn modern web dev while building something genuinely useful.",
+      "My personal portfolio site, built with Next.js, TypeScript, and an editorial design. An excuse to learn modern web dev while building something genuinely useful.",
     tags: ["Next.js", "TypeScript", "Editorial", "Web Dev"],
     status: "Complete",
     statusColor: "green" as const,
@@ -124,12 +148,6 @@ export function Projects() {
         ))}
       </div>
 
-      <div
-        className="mt-8 text-center text-sm text-[#7A7870] font-medium"
-        style={{ fontFamily: '"DM Sans", sans-serif' }}
-      >
-        More projects coming soon —
-      </div>
     </section>
   );
 }
