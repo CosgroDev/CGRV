@@ -8,87 +8,205 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "CV | Dale Cosgrove",
-  description: "Curriculum Vitae of Dale Cosgrove — Food Safety Professional & Tech Enthusiast",
+  description: "Curriculum Vitae of Dale Cosgrove — Quality, Food Safety & Supply Chain Professional",
 };
 
 const experience = [
   {
-    role: "PROJECTS & PERFORMANCE SPECIALIST",
-    company: "FBC UK",
-    period: "CURRENT",
-    location: "UK",
+    role: "QUALITY PERFORMANCE & PROJECTS MANAGER",
+    company: "FOX'S BURTON'S COMPANIES (FBC UK)",
+    period: "SEP 2025 – PRESENT",
+    duration: "7 MOS",
+    location: "BATLEY, ENGLAND, UK",
     type: "FULL-TIME",
     description:
-      "Leading projects across food safety, operational performance, and systems improvement within one of the UK's largest biscuit manufacturers. Responsibilities span data analysis, project management framework design, process optimisation, and ways-of-working initiatives.",
+      "Leading quality performance and project delivery across FBC UK, one of the UK's largest biscuit manufacturers. Responsible for driving operational improvement through structured project management, data-led performance tracking, and cross-functional collaboration.",
     achievements: [
-      "Designed and implemented a structured PM framework for the food manufacturing environment",
-      "Led data analysis initiatives to identify and track operational KPIs",
-      "Drove digitalisation of key food safety documentation processes",
-      "Facilitated cross-functional projects improving audit readiness and compliance",
+      "Driving quality KPI performance through Microsoft Power BI dashboards and data visualisation",
+      "Managing cross-functional improvement projects spanning quality, safety, and operational efficiency",
+      "Developing project management frameworks suited to the food manufacturing environment",
+      "Facilitating audit readiness, compliance initiatives, and ways-of-working improvements",
     ],
+    tags: ["PROJECT MANAGEMENT", "POWER BI"],
   },
   {
-    role: "FOOD SAFETY PROFESSIONAL",
-    company: "FBC UK",
-    period: "PREVIOUS",
-    location: "UK",
+    role: "SUPPLY CHAIN TECHNICAL LEAD",
+    company: "FOX'S BURTON'S COMPANIES (FBC UK)",
+    period: "APR 2021 – SEP 2025",
+    duration: "4 YRS 6 MOS",
+    location: "BATLEY, ENGLAND, UK",
     type: "FULL-TIME",
     description:
-      "Specialist in food safety compliance, HACCP management, and regulatory frameworks within a high-volume manufacturing environment. Responsible for maintaining and improving food safety systems to meet BRC, customer, and legal standards.",
+      "Technical lead for supply chain operations, bridging food safety, quality systems, and digital tooling. Championed low-code development solutions and SharePoint-based systems to modernise supplier and ingredient management processes.",
     achievements: [
-      "Maintained and improved HACCP plans across multiple production sites",
-      "Managed internal and external audit programmes",
-      "Delivered food safety training to production and quality teams",
-      "Led non-conformance investigations and corrective action programmes",
+      "Built and deployed low-code tools via Microsoft Power Apps to streamline supply chain workflows",
+      "Managed SharePoint Online environments for supplier documentation and technical data",
+      "Led supplier assurance and raw material technical compliance programmes",
+      "Drove digitalisation of supply chain quality documentation, reducing manual workload",
     ],
+    tags: ["SHAREPOINT ONLINE", "LOW-CODE DEVELOPMENT", "SUPPLY CHAIN"],
+  },
+  {
+    role: "QUALITY ASSURANCE MANAGER",
+    company: "FOX'S BISCUITS",
+    period: "AUG 2020 – APR 2021",
+    duration: "9 MOS",
+    location: "BATLEY, ENGLAND, UK",
+    type: "FULL-TIME",
+    description:
+      "Managed the quality assurance function at site level, overseeing food safety systems, audit programmes, and compliance against BRC and customer standards within a high-volume biscuit manufacturing environment.",
+    achievements: [
+      "Maintained and improved HACCP plans and food safety management systems",
+      "Managed internal and third-party audit schedules and outcomes",
+      "Led non-conformance investigations and drove corrective action programmes",
+      "Delivered quality and food safety training to production and technical teams",
+    ],
+    tags: ["QUALITY ASSURANCE", "RISK ASSESSMENT"],
+  },
+  {
+    role: "RAW MATERIALS MANAGER",
+    company: "FOX'S BISCUITS",
+    period: "MAR 2020 – APR 2021",
+    duration: "1 YR 2 MOS",
+    location: "BATLEY, ENGLAND, UK",
+    type: "FULL-TIME",
+    description:
+      "Responsible for the technical management of raw materials across site, ensuring ingredient compliance, allergen controls, and supplier assurance in line with BRC and customer requirements.",
+    achievements: [
+      "Managed raw material specifications, approvals, and supplier technical documentation",
+      "Maintained allergen controls and ingredient risk assessments",
+      "Coordinated with procurement and production to resolve raw material quality issues",
+    ],
+    tags: ["ALLERGENS", "RISK ASSESSMENT"],
+  },
+  {
+    role: "TECHNICAL ASSISTANT",
+    company: "YORKSHIRE PREMIER MEAT",
+    period: "MAR 2015 – MAR 2020",
+    duration: "5 YRS 1 MO",
+    location: "SOUTH KIRKBY, WEST YORKSHIRE, UK",
+    type: "FULL-TIME",
+    description:
+      "Provided technical support across food safety, quality control, and compliance functions within a meat processing operation. Developed expertise in HACCP, food microbiology, and regulatory compliance.",
+    achievements: [
+      "Supported HACCP development and review processes across the site",
+      "Conducted microbiological and environmental monitoring programmes",
+      "Assisted with BRC and customer audits, delivering positive outcomes",
+      "Risk assessed processes and raw materials to maintain food safety standards",
+    ],
+    tags: ["FOOD MICROBIOLOGY", "HACCP", "RISK ASSESSMENT"],
+  },
+  {
+    role: "QUALITY CONTROL",
+    company: "YORKSHIRE PREMIER MEAT",
+    period: "JUL 2013 – MAR 2015",
+    duration: "1 YR 9 MOS",
+    location: "SOUTH KIRKBY, WEST YORKSHIRE, UK",
+    type: "FULL-TIME",
+    description:
+      "Carried out quality control checks across production to ensure product met specification, legal, and customer requirements within a meat processing environment.",
+    achievements: [
+      "Performed product checks, weight monitoring, and label verification",
+      "Identified and escalated non-conforming product in line with site procedures",
+      "Supported food safety and hygiene standards on the production floor",
+    ],
+    tags: ["QUALITY CONTROL", "FOOD SAFETY"],
+  },
+  {
+    role: "DESPATCH OPERATIVE",
+    company: "YORKSHIRE PREMIER MEAT",
+    period: "MAY 2011 – JUL 2013",
+    duration: "2 YRS 3 MOS",
+    location: "SOUTH KIRKBY, WEST YORKSHIRE, UK",
+    type: "FULL-TIME",
+    description: "Managed outbound logistics and despatch operations within a chilled food manufacturing environment.",
+    achievements: [
+      "Coordinated order picking, loading, and despatch of chilled products",
+      "Maintained cold chain integrity and traceability documentation",
+    ],
+    tags: ["LOGISTICS", "FOOD MANUFACTURING"],
+  },
+  {
+    role: "DRIVERS MATE",
+    company: "DHL",
+    period: "JUN 2009 – SEP 2009",
+    duration: "4 MOS",
+    location: "NORMANTON, WEST YORKSHIRE, UK",
+    type: "TEMPORARY",
+    description: "Supported delivery operations as drivers mate for a national logistics provider.",
+    achievements: [
+      "Assisted with delivery of parcels and goods across regional routes",
+      "Maintained accurate delivery documentation and customer receipts",
+    ],
+    tags: ["LOGISTICS"],
   },
 ];
 
-const education = [
+const certifications = [
   {
-    qualification: "LEVEL 4 FOOD SAFETY MANAGEMENT",
-    institution: "CIEH / RSPH",
-    year: "UPDATE YEAR",
-    type: "PROFESSIONAL CERT",
+    qualification: "FOOD SAFETY LEVEL 4",
+    institution: "HIGHFIELD",
+    year: "JUL 2021",
+    type: "DISTINCTION",
+    color: "green" as const,
   },
   {
-    qualification: "LEVEL 3 FOOD HYGIENE & SAFETY",
-    institution: "CIEH / RSPH",
-    year: "UPDATE YEAR",
-    type: "PROFESSIONAL CERT",
-  },
-  {
-    qualification: "HACCP PRINCIPLES & PRACTICE",
-    institution: "INDUSTRY BODY",
-    year: "UPDATE YEAR",
+    qualification: "BRCGS LEAD AUDITOR",
+    institution: "BRCGS",
+    year: "FEB 2021",
     type: "CERTIFICATION",
+    color: "yellow" as const,
+  },
+  {
+    qualification: "HACCP LEVEL 4",
+    institution: "HIGHFIELD",
+    year: "NOV 2020",
+    type: "CERTIFICATION",
+    color: "yellow" as const,
+  },
+];
+
+const formalEducation = [
+  {
+    qualification: "COMMERCIAL BUSINESS & PHOTOGRAPHY",
+    institution: "WAKEFIELD COLLEGE (LEEDS MET CAMPUS)",
+    period: "2009 – 2011",
+  },
+  {
+    qualification: "BTEC NATIONAL DIPLOMA — ART & DESIGN, PHOTOGRAPHY, GRAPHICS & FINE ART",
+    institution: "BARNSLEY COLLEGE",
+    period: "2007 – 2009",
   },
 ];
 
 const technicalSkills = [
   { label: "FOOD SAFETY & HACCP", value: 95, color: "green" as const },
-  { label: "DATA ANALYSIS", value: 78, color: "green" as const },
+  { label: "REGULATORY COMPLIANCE", value: 92, color: "green" as const },
   { label: "PROJECT MANAGEMENT", value: 85, color: "yellow" as const },
   { label: "PROCESS IMPROVEMENT", value: 88, color: "yellow" as const },
-  { label: "REGULATORY COMPLIANCE", value: 92, color: "green" as const },
-  { label: "SYSTEMS DESIGN", value: 75, color: "yellow" as const },
-  { label: "MICROSOFT 365", value: 80, color: "green" as const },
-  { label: "TECH & AUTOMATION", value: 72, color: "yellow" as const },
+  { label: "DATA ANALYSIS / POWER BI", value: 80, color: "green" as const },
+  { label: "SHAREPOINT / POWER APPS", value: 82, color: "yellow" as const },
+  { label: "SUPPLY CHAIN TECHNICAL", value: 85, color: "green" as const },
+  { label: "RISK ASSESSMENT", value: 90, color: "green" as const },
 ];
 
 const coreCompetencies = [
   "HACCP MANAGEMENT",
-  "BRC STANDARDS",
-  "AUDIT MANAGEMENT",
+  "BRCGS STANDARDS",
+  "LEAD AUDITING",
+  "FOOD MICROBIOLOGY",
+  "ALLERGEN CONTROLS",
   "ROOT CAUSE ANALYSIS",
   "KPI DEVELOPMENT",
   "STAKEHOLDER MANAGEMENT",
-  "CHANGE MANAGEMENT",
   "RISK ASSESSMENT",
-  "TRAINING & DEVELOPMENT",
   "DATA VISUALISATION",
-  "PROCESS MAPPING",
+  "LOW-CODE DEVELOPMENT",
   "CONTINUOUS IMPROVEMENT",
+  "SUPPLIER ASSURANCE",
+  "FOOD SCIENCE",
+  "MEAT PROCESSING",
+  "TRAINING & DEVELOPMENT",
 ];
 
 export default function CVPage() {
@@ -114,13 +232,13 @@ export default function CVPage() {
               className="text-[#fbbf24] text-[9px] mb-4"
               style={{ fontFamily: '"Press Start 2P", monospace' }}
             >
-              FOOD SAFETY PROFESSIONAL &amp; TECH ENTHUSIAST
+              QUALITY, FOOD SAFETY &amp; SUPPLY CHAIN PROFESSIONAL
             </p>
             <div className="flex flex-wrap gap-3">
               <div className="flex items-center gap-2 text-[#888888] text-[8px]"
                 style={{ fontFamily: '"Press Start 2P", monospace' }}>
                 <MapPin size={10} />
-                <span>UNITED KINGDOM</span>
+                <span>BATLEY, ENGLAND, UK</span>
               </div>
               <div className="flex items-center gap-2 text-[#888888] text-[8px]"
                 style={{ fontFamily: '"Press Start 2P", monospace' }}>
@@ -153,7 +271,7 @@ export default function CVPage() {
       </div>
 
       <div className="space-y-8">
-        {/* Profile Summary */}
+        {/* Profile Summary — placeholder until bio is received */}
         <Card variant="green">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -165,13 +283,30 @@ export default function CVPage() {
               className="text-[#f0f0f0] text-[9px] leading-loose"
               style={{ fontFamily: '"Press Start 2P", monospace' }}
             >
-              Results-driven food safety professional with extensive experience in
-              HACCP management, regulatory compliance, and food safety systems within
-              high-volume manufacturing. Currently operating in a Projects &amp;
-              Performance role at FBC UK, combining food safety expertise with data
-              analysis, project management, and process improvement. Passionate about
-              technology and its potential to modernise food safety practices and
-              operational efficiency.
+              Technical Lead working in food manufacturing with a focus on quality, food
+              safety, and improving how systems operate in real production environments.
+              Specialising in HACCP, risk assessment, and food safety frameworks such as
+              BRCGS and retailer standards, with hands-on experience implementing practical
+              controls across manufacturing operations.
+            </p>
+            <p
+              className="text-[#f0f0f0] text-[9px] leading-loose mt-4"
+              style={{ fontFamily: '"Press Start 2P", monospace' }}
+            >
+              My approach is centred on making systems work better — simplifying, structuring,
+              and making processes easier for teams to use while still meeting modern food
+              safety and quality standards. A key part of my work is turning day-to-day
+              factory activity into structured, trendable data that actually tells a story:
+              from digitising audits and building operational tools to analysing root causes
+              and performance trends.
+            </p>
+            <p
+              className="text-[#f0f0f0] text-[9px] leading-loose mt-4"
+              style={{ fontFamily: '"Press Start 2P", monospace' }}
+            >
+              I enjoy working at the intersection of operations, quality, and data. The goal
+              is always the same: practical systems that support teams on the floor, improve
+              decision-making, and strengthen food safety without adding unnecessary complexity.
             </p>
           </CardContent>
         </Card>
@@ -202,14 +337,22 @@ export default function CVPage() {
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2 shrink-0">
-                      <Badge variant="green">{job.period}</Badge>
+                      <Badge variant="green">{job.duration}</Badge>
                       <Badge variant="default">{job.type}</Badge>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-[#888888] text-[7px]"
-                    style={{ fontFamily: '"Press Start 2P", monospace' }}>
-                    <MapPin size={9} />
-                    <span>{job.location}</span>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2 text-[#888888] text-[7px]"
+                      style={{ fontFamily: '"Press Start 2P", monospace' }}>
+                      <MapPin size={9} />
+                      <span>{job.location}</span>
+                    </div>
+                    <span
+                      className="text-[#555555] text-[7px]"
+                      style={{ fontFamily: '"Press Start 2P", monospace' }}
+                    >
+                      {job.period}
+                    </span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -225,7 +368,7 @@ export default function CVPage() {
                   >
                     KEY ACHIEVEMENTS:
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     {job.achievements.map((achievement, i) => (
                       <li
                         key={i}
@@ -237,6 +380,15 @@ export default function CVPage() {
                       </li>
                     ))}
                   </ul>
+                  {job.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {job.tags.map((tag) => (
+                        <Badge key={tag} variant="default" className="text-[6px]">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -290,7 +442,47 @@ export default function CVPage() {
           </div>
         </div>
 
-        {/* Education & Certifications */}
+        {/* Certifications */}
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <Award size={16} className="text-[#22c55e]" />
+            <h2
+              className="text-[#f0f0f0] text-sm"
+              style={{ fontFamily: '"Press Start 2P", monospace' }}
+            >
+              CERTIFICATIONS
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {certifications.map((cert, index) => (
+              <Card key={index} variant="default">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Award size={14} className="text-[#fbbf24]" />
+                    <Badge variant={cert.color}>{cert.type}</Badge>
+                  </div>
+                  <CardTitle className="text-[8px]">{cert.qualification}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p
+                    className="text-[#888888] text-[7px] leading-loose"
+                    style={{ fontFamily: '"Press Start 2P", monospace' }}
+                  >
+                    {cert.institution}
+                  </p>
+                  <p
+                    className="text-[#fbbf24] text-[7px] mt-1"
+                    style={{ fontFamily: '"Press Start 2P", monospace' }}
+                  >
+                    {cert.year}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Education */}
         <div>
           <div className="flex items-center gap-3 mb-6">
             <GraduationCap size={16} className="text-[#22c55e]" />
@@ -298,16 +490,16 @@ export default function CVPage() {
               className="text-[#f0f0f0] text-sm"
               style={{ fontFamily: '"Press Start 2P", monospace' }}
             >
-              QUALIFICATIONS &amp; CERTIFICATIONS
+              EDUCATION
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {education.map((edu, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {formalEducation.map((edu, index) => (
               <Card key={index} variant="default">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    <Award size={14} className="text-[#fbbf24]" />
-                    <Badge variant="yellow">{edu.type}</Badge>
+                    <GraduationCap size={14} className="text-[#888888]" />
+                    <Badge variant="default">FURTHER EDUCATION</Badge>
                   </div>
                   <CardTitle className="text-[8px]">{edu.qualification}</CardTitle>
                 </CardHeader>
@@ -322,7 +514,7 @@ export default function CVPage() {
                     className="text-[#fbbf24] text-[7px] mt-1"
                     style={{ fontFamily: '"Press Start 2P", monospace' }}
                   >
-                    {edu.year}
+                    {edu.period}
                   </p>
                 </CardContent>
               </Card>
