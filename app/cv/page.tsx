@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench } from "lucide-react";
 import Link from "next/link";
+import { durationFromPeriod } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "CV | Dale Cosgrove",
@@ -15,7 +16,6 @@ const experience = [
     role: "Quality Performance & Projects Manager",
     company: "Fox's Burton's Companies (FBC UK)",
     period: "Sep 2025 – Present",
-    duration: "7 months",
     location: "Batley, England, UK",
     type: "Full-time",
     description:
@@ -32,7 +32,6 @@ const experience = [
     role: "Supply Chain Technical Lead",
     company: "Fox's Burton's Companies (FBC UK)",
     period: "Apr 2021 – Sep 2025",
-    duration: "4 yrs 6 mos",
     location: "Batley, England, UK",
     type: "Full-time",
     description:
@@ -49,7 +48,6 @@ const experience = [
     role: "Quality Assurance Manager",
     company: "Fox's Biscuits",
     period: "Aug 2020 – Apr 2021",
-    duration: "9 months",
     location: "Batley, England, UK",
     type: "Full-time",
     description:
@@ -66,7 +64,6 @@ const experience = [
     role: "Raw Materials Manager",
     company: "Fox's Biscuits",
     period: "Mar 2020 – Apr 2021",
-    duration: "1 yr 2 mos",
     location: "Batley, England, UK",
     type: "Full-time",
     description:
@@ -82,7 +79,6 @@ const experience = [
     role: "Technical Assistant",
     company: "Yorkshire Premier Meat",
     period: "Mar 2015 – Mar 2020",
-    duration: "5 yrs 1 mo",
     location: "South Kirkby, West Yorkshire, UK",
     type: "Full-time",
     description:
@@ -99,7 +95,6 @@ const experience = [
     role: "Quality Control",
     company: "Yorkshire Premier Meat",
     period: "Jul 2013 – Mar 2015",
-    duration: "1 yr 9 mos",
     location: "South Kirkby, West Yorkshire, UK",
     type: "Full-time",
     description:
@@ -115,7 +110,6 @@ const experience = [
     role: "Despatch Operative",
     company: "Yorkshire Premier Meat",
     period: "May 2011 – Jul 2013",
-    duration: "2 yrs 3 mos",
     location: "South Kirkby, West Yorkshire, UK",
     type: "Full-time",
     description: "Managed outbound logistics and despatch operations within a chilled food manufacturing environment.",
@@ -129,7 +123,6 @@ const experience = [
     role: "Drivers Mate",
     company: "DHL",
     period: "Jun 2009 – Sep 2009",
-    duration: "4 months",
     location: "Normanton, West Yorkshire, UK",
     type: "Temporary",
     description: "Supported delivery operations as drivers mate for a national logistics provider.",
@@ -364,7 +357,7 @@ export default function CVPage() {
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2 shrink-0">
-                      <Badge variant="green">{job.duration}</Badge>
+                      <Badge variant="green">{durationFromPeriod(job.period)}</Badge>
                       <Badge variant="default">{job.type}</Badge>
                     </div>
                   </div>

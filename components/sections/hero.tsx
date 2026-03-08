@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MapPin, Briefcase } from "lucide-react";
+import { yearsFrom } from "@/lib/dates";
+
+const CAREER_START = new Date(2011, 4, 1);       // May 2011 — Yorkshire Premier Meat
+const POWER_PLATFORM_START = new Date(2020, 2, 1); // March 2020
 
 const ROLES = [
   "Food Safety Professional",
@@ -119,10 +123,10 @@ export function Hero() {
       {/* Stats strip */}
       <div className="border-t-2 border-b-2 border-[#1C1C1A] py-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { label: "Years Experience", value: "15+" },
+          { label: "Years Experience", value: `${yearsFrom(CAREER_START)}+` },
           { label: "Industry", value: "Food Mfg" },
           { label: "Current Role", value: "Q&P Mgr" },
-          { label: "Certifications", value: "3" },
+          { label: "Power Platform", value: `${yearsFrom(POWER_PLATFORM_START)} yrs` },
         ].map((stat) => (
           <div key={stat.label} className="text-center">
             <div

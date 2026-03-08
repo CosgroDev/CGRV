@@ -1,5 +1,8 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { yearsFrom } from "@/lib/dates";
+
+const POWER_PLATFORM_START = new Date(2020, 2, 1); // March 2020
 
 const skills = [
   "Food Safety & HACCP",
@@ -11,7 +14,7 @@ const skills = [
   "Systems Thinking",
   "Tech & Automation",
   "Supply Chain Technical",
-  "SharePoint & Power Apps",
+  "Power Apps & Power Automate",
   "Power BI",
   "Continuous Improvement",
 ];
@@ -26,6 +29,7 @@ const traits = [
 ];
 
 export function About() {
+  const ppYears = yearsFrom(POWER_PLATFORM_START);
   return (
     <section id="about" className="py-16 px-4 max-w-5xl mx-auto">
       <div className="mb-12">
@@ -64,6 +68,12 @@ export function About() {
                 My role sits at the intersection of food safety, data analysis, systems
                 thinking, and project management — giving me a unique perspective on how
                 technology can make food safer and operations smarter.
+              </p>
+              <p>
+                I&apos;ve spent {ppYears} years working with the{" "}
+                <span className="font-semibold">Microsoft Power Platform</span> — building
+                production Power Apps and Power Automate flows that are actively used
+                across the business every day.
               </p>
               <p>
                 Outside of work, I explore tech, build things, and write about what I learn —
