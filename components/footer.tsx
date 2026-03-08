@@ -28,7 +28,7 @@ export function Footer() {
               <span className="hidden sm:inline">EMAIL</span>
             </Link>
             <Link
-              href="https://linkedin.com/in/dale-cosgrove"
+              href="https://www.linkedin.com/in/dale-cosgrove-738a18a4"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#888888] hover:text-[#22c55e] transition-colors border-2 border-[#333333] px-3 py-2 hover:border-[#22c55e] text-[8px]"

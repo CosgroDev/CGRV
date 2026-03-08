@@ -137,7 +137,7 @@ export default function CVPage() {
                 EMAIL
               </Button>
             </Link>
-            <Link href="https://linkedin.com/in/dale-cosgrove" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/dale-cosgrove-738a18a4" target="_blank" rel="noopener noreferrer">
               <Button variant="secondary" size="sm" className="w-full sm:w-auto">
                 <Linkedin size={10} className="mr-2" />
                 LINKEDIN
@@ -346,7 +346,7 @@ export default function CVPage() {
                   GET IN TOUCH
                 </Button>
               </Link>
-              <Link href="https://linkedin.com/in/dale-cosgrove" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/dale-cosgrove-738a18a4" target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" size="md">
                   <Linkedin size={12} className="mr-2" />
                   CONNECT

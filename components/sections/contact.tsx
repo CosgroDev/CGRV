@@ -50,7 +50,7 @@ export function Contact() {
               </Link>
 
               <Link
-                href="https://linkedin.com/in/dale-cosgrove"
+                href="https://www.linkedin.com/in/dale-cosgrove-738a18a4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1"
