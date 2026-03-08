@@ -1,14 +1,19 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 
 const skills = [
-  { label: "Food Safety & HACCP", value: 95, color: "green" as const },
-  { label: "Data Analysis", value: 78, color: "green" as const },
-  { label: "Project Management", value: 85, color: "yellow" as const },
-  { label: "Process Improvement", value: 88, color: "yellow" as const },
-  { label: "Systems Thinking", value: 80, color: "green" as const },
-  { label: "Tech & Automation", value: 72, color: "yellow" as const },
+  "Food Safety & HACCP",
+  "Data Analysis",
+  "Project Management",
+  "Process Improvement",
+  "Regulatory Compliance",
+  "Risk Assessment",
+  "Systems Thinking",
+  "Tech & Automation",
+  "Supply Chain Technical",
+  "SharePoint & Power Apps",
+  "Power BI",
+  "Continuous Improvement",
 ];
 
 const traits = [
@@ -71,17 +76,12 @@ export function About() {
         {/* Skills */}
         <Card variant="default">
           <CardHeader>
-            <CardTitle>Skills</CardTitle>
+            <CardTitle>Skills &amp; Expertise</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
+            <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
-                <Progress
-                  key={skill.label}
-                  label={skill.label}
-                  value={skill.value}
-                  color={skill.color}
-                />
+                <Badge key={skill} variant="green">{skill}</Badge>
               ))}
             </div>
           </CardContent>

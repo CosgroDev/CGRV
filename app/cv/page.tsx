@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench } from "lucide-react";
 import Link from "next/link";
@@ -179,34 +178,68 @@ const formalEducation = [
   },
 ];
 
-const technicalSkills = [
-  { label: "Food Safety & HACCP", value: 95, color: "green" as const },
-  { label: "Regulatory Compliance", value: 92, color: "green" as const },
-  { label: "Project Management", value: 85, color: "yellow" as const },
-  { label: "Process Improvement", value: 88, color: "yellow" as const },
-  { label: "Data Analysis / Power BI", value: 80, color: "green" as const },
-  { label: "SharePoint / Power Apps", value: 82, color: "yellow" as const },
-  { label: "Supply Chain Technical", value: 85, color: "green" as const },
-  { label: "Risk Assessment", value: 90, color: "green" as const },
-];
-
-const coreCompetencies = [
-  "HACCP Management",
-  "BRCGS Standards",
-  "Lead Auditing",
-  "Food Microbiology",
-  "Allergen Controls",
-  "Root Cause Analysis",
-  "KPI Development",
-  "Stakeholder Management",
-  "Risk Assessment",
-  "Data Visualisation",
-  "Low-Code Development",
-  "Continuous Improvement",
-  "Supplier Assurance",
-  "Food Science",
-  "Meat Processing",
-  "Training & Development",
+const skillGroups = [
+  {
+    category: "Industry Knowledge",
+    skills: [
+      "Food Manufacturing",
+      "Food Safety Management",
+      "HACCP",
+      "Food Microbiology",
+      "Allergen Controls",
+      "Food Science",
+      "Food Technology",
+      "Meat Processing",
+      "Dairy Products",
+    ],
+  },
+  {
+    category: "Quality & Compliance",
+    skills: [
+      "BRCGS Standards",
+      "Lead Auditing",
+      "Quality Assurance",
+      "Quality Control",
+      "Regulatory Compliance",
+      "Risk Assessment",
+      "Root Cause Analysis",
+      "Supplier Assurance",
+    ],
+  },
+  {
+    category: "Leadership & Management",
+    skills: [
+      "Project Management",
+      "Process Improvement",
+      "Continuous Improvement",
+      "Stakeholder Management",
+      "KPI Development",
+      "Training & Development",
+      "Change Management",
+    ],
+  },
+  {
+    category: "Technology & Data",
+    skills: [
+      "Microsoft Power BI",
+      "SharePoint Online",
+      "Microsoft Power Apps",
+      "Low-Code Development",
+      "Data Analysis",
+      "Data Visualisation",
+      "Microsoft Teams",
+      "Python",
+    ],
+  },
+  {
+    category: "Supply Chain",
+    skills: [
+      "Supply Chain Technical",
+      "Raw Materials Management",
+      "Supplier Management",
+      "Traceability",
+    ],
+  },
 ];
 
 export default function CVPage() {
@@ -400,39 +433,21 @@ export default function CVPage() {
               Skills
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card variant="default">
-              <CardHeader>
-                <CardTitle>Skill Levels</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {technicalSkills.map((skill) => (
-                    <Progress
-                      key={skill.label}
-                      label={skill.label}
-                      value={skill.value}
-                      color={skill.color}
-                    />
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card variant="yellow">
-              <CardHeader>
-                <CardTitle>Core Competencies</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {coreCompetencies.map((comp) => (
-                    <Badge key={comp} variant="yellow">
-                      {comp}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skillGroups.map((group) => (
+              <Card key={group.category} variant="default">
+                <CardHeader>
+                  <CardTitle>{group.category}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <Badge key={skill} variant="green">{skill}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
