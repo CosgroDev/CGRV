@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     description:
       "Food Safety Professional turned data-driven tech enthusiast. Projects & Performance specialist at FBC UK.",
     type: "website",
+    url: "https://cgrv.co.uk",
+    siteName: "Dale Cosgrove",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
+    description:
+      "Food Safety Professional turned data-driven tech enthusiast. Projects & Performance specialist at FBC UK.",
   },
 };
 
