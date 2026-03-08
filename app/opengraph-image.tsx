@@ -6,7 +6,6 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  // Fetch Syne ExtraBold from Google Fonts
   const css = await fetch(
     "https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap",
     { headers: { "User-Agent": "Mozilla/5.0" } }
@@ -31,7 +30,7 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "64px 80px",
+          padding: "60px 80px",
           fontFamily: fontData ? "Syne" : "sans-serif",
           position: "relative",
           overflow: "hidden",
@@ -63,18 +62,18 @@ export default async function Image() {
           }}
         />
 
-        {/* Label strip */}
+        {/* Category label */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
-            marginBottom: "36px",
+            gap: "14px",
+            marginBottom: "28px",
           }}
         >
           <div
             style={{
-              width: "40px",
+              width: "36px",
               height: "3px",
               background: "#1C1C1A",
               display: "flex",
@@ -82,39 +81,39 @@ export default async function Image() {
           />
           <span
             style={{
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 500,
               color: "#7A7870",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
             }}
           >
-            Quality · Food Safety · Supply Chain
+            Quality · Food Safety · Supply Chain · Tech
           </span>
         </div>
 
         {/* DALE */}
         <div
           style={{
-            fontSize: "148px",
+            fontSize: "130px",
             fontWeight: 800,
             color: "#1C1C1A",
             lineHeight: 0.88,
-            letterSpacing: "-4px",
+            letterSpacing: "-3px",
             display: "flex",
           }}
         >
           DALE
         </div>
 
-        {/* COSGROVE — each letter coloured */}
+        {/* COSGROVE — per-letter colour */}
         <div
           style={{
-            fontSize: "148px",
+            fontSize: "130px",
             fontWeight: 800,
             lineHeight: 0.88,
-            letterSpacing: "-4px",
-            marginBottom: "44px",
+            letterSpacing: "-3px",
+            marginBottom: "32px",
             display: "flex",
           }}
         >
@@ -128,18 +127,19 @@ export default async function Image() {
           <span style={{ color: "#22c55e" }}>E</span>
         </div>
 
-        {/* Role with green bar */}
+        {/* Headline — prominent role statement */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "16px",
+            marginBottom: "28px",
           }}
         >
           <div
             style={{
               width: "6px",
-              height: "34px",
+              height: "40px",
               background: "#22c55e",
               display: "flex",
               flexShrink: 0,
@@ -147,28 +147,44 @@ export default async function Image() {
           />
           <span
             style={{
-              fontSize: "26px",
-              fontWeight: 600,
+              fontSize: "30px",
+              fontWeight: 800,
               color: "#1C1C1A",
-              letterSpacing: "-0.3px",
+              letterSpacing: "-0.5px",
+              lineHeight: 1.15,
             }}
           >
             Food Safety Professional &amp; Tech Enthusiast
           </span>
         </div>
 
-        {/* URL — bottom right */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "32px",
-            right: "80px",
-            fontSize: "15px",
-            color: "#7A7870",
-            letterSpacing: "0.05em",
-          }}
-        >
-          cgrv.co.uk
+        {/* CTA pill */}
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              background: "#1C1C1A",
+              color: "#F6F4EF",
+              padding: "12px 24px",
+              borderRadius: "4px",
+              fontSize: "16px",
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+            }}
+          >
+            <span
+              style={{
+                display: "flex",
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "#22c55e",
+              }}
+            />
+            View Portfolio at cgrv.co.uk
+          </div>
         </div>
       </div>
     ),
