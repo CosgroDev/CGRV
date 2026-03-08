@@ -3,109 +3,99 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const skills = [
-  { label: "FOOD SAFETY & HACCP", value: 95, color: "green" as const },
-  { label: "DATA ANALYSIS", value: 78, color: "green" as const },
-  { label: "PROJECT MANAGEMENT", value: 85, color: "yellow" as const },
-  { label: "PROCESS IMPROVEMENT", value: 88, color: "yellow" as const },
-  { label: "SYSTEMS THINKING", value: 80, color: "green" as const },
-  { label: "TECH & AUTOMATION", value: 72, color: "yellow" as const },
+  { label: "Food Safety & HACCP", value: 95, color: "green" as const },
+  { label: "Data Analysis", value: 78, color: "green" as const },
+  { label: "Project Management", value: 85, color: "yellow" as const },
+  { label: "Process Improvement", value: 88, color: "yellow" as const },
+  { label: "Systems Thinking", value: 80, color: "green" as const },
+  { label: "Tech & Automation", value: 72, color: "yellow" as const },
 ];
 
 const traits = [
-  "DETAIL-ORIENTED",
-  "DATA-DRIVEN",
-  "COLLABORATIVE",
-  "INNOVATIVE",
-  "SAFETY-FIRST",
-  "TECH-CURIOUS",
+  "Detail-Oriented",
+  "Data-Driven",
+  "Collaborative",
+  "Innovative",
+  "Safety-First",
+  "Tech-Curious",
 ];
 
 export function About() {
   return (
     <section id="about" className="py-16 px-4 max-w-5xl mx-auto">
-      {/* Section header */}
       <div className="mb-12">
-        <div
-          className="text-[#22c55e] text-[8px] mb-3"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+        <p
+          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
+          style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          // SECTION_01
-        </div>
+          01 — About
+        </p>
         <h2
-          className="text-[#f0f0f0] text-lg sm:text-xl mb-4"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+          className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
+          style={{ fontFamily: '"Syne", sans-serif' }}
         >
-          ABOUT ME
+          About <span className="text-[#22c55e]">Me</span>
         </h2>
-        <div className="pixel-divider" />
+        <div className="editorial-divider" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Bio card */}
+        {/* Bio */}
         <Card variant="green">
           <CardHeader>
-            <CardTitle>[ PLAYER PROFILE ]</CardTitle>
+            <CardTitle>Profile</CardTitle>
           </CardHeader>
           <CardContent>
             <div
-              className="text-[#f0f0f0] text-[9px] leading-loose space-y-4"
-              style={{ fontFamily: '"Press Start 2P", monospace' }}
+              className="text-sm text-[#1C1C1A] leading-relaxed space-y-4"
+              style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
               <p>
-                Hi, I&apos;m Dale — a food safety professional
-                who loves everything technology. I currently
-                work in a Projects &amp; Performance role at
-                FBC UK, one of the UK&apos;s largest biscuit
-                manufacturers.
+                Hi, I&apos;m Dale — a food safety professional who loves everything
+                technology. I currently work in a Projects &amp; Performance role at FBC UK,
+                one of the UK&apos;s largest biscuit manufacturers.
               </p>
               <p>
-                My role sits at the intersection of food
-                safety, data analysis, systems thinking, and
-                project management — giving me a unique
-                perspective on how technology can make food
-                safer and operations smarter.
+                My role sits at the intersection of food safety, data analysis, systems
+                thinking, and project management — giving me a unique perspective on how
+                technology can make food safer and operations smarter.
               </p>
               <p>
-                Outside of work, I explore tech, build things,
-                and write about what I learn — always looking
-                for the next level up.
+                Outside of work, I explore tech, build things, and write about what I learn —
+                always looking for the next step forward.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Skills card */}
-        <div className="space-y-6">
-          <Card variant="default">
-            <CardHeader>
-              <CardTitle>[ SKILL TREE ]</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {skills.map((skill) => (
-                  <Progress
-                    key={skill.label}
-                    label={skill.label}
-                    value={skill.value}
-                    color={skill.color}
-                  />
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        {/* Skills */}
+        <Card variant="default">
+          <CardHeader>
+            <CardTitle>Skills</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {skills.map((skill) => (
+                <Progress
+                  key={skill.label}
+                  label={skill.label}
+                  value={skill.value}
+                  color={skill.color}
+                />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Traits */}
         <Card variant="yellow" className="lg:col-span-2">
           <CardHeader>
-            <CardTitle>[ CHARACTER TRAITS ]</CardTitle>
+            <CardTitle>Character</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {traits.map((trait) => (
-                <Badge key={trait} variant="yellow">
-                  {trait}
-                </Badge>
+                <Badge key={trait} variant="yellow">{trait}</Badge>
               ))}
             </div>
           </CardContent>

@@ -3,146 +3,142 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { MapPin, Briefcase } from "lucide-react";
 
-const TYPING_STRINGS = [
-  "FOOD SAFETY PROFESSIONAL",
-  "DATA ANALYST",
-  "TECH ENTHUSIAST",
-  "PROJECT MANAGER",
-  "PROCESS INNOVATOR",
+const ROLES = [
+  "Food Safety Professional",
+  "Data Analyst",
+  "Tech Enthusiast",
+  "Project Manager",
+  "Process Innovator",
 ];
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
-  const [stringIndex, setStringIndex] = useState(0);
+  const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const currentString = TYPING_STRINGS[stringIndex];
-    const typingSpeed = deleting ? 60 : 100;
-    const pauseTime = deleting ? 100 : 1800;
+    const current = ROLES[roleIndex];
+    const speed = deleting ? 50 : 80;
 
     const timer = setTimeout(() => {
       if (!deleting) {
-        if (charIndex < currentString.length) {
-          setDisplayText(currentString.slice(0, charIndex + 1));
+        if (charIndex < current.length) {
+          setDisplayText(current.slice(0, charIndex + 1));
           setCharIndex((c) => c + 1);
         } else {
-          setTimeout(() => setDeleting(true), pauseTime);
+          setTimeout(() => setDeleting(true), 2000);
         }
       } else {
         if (charIndex > 0) {
-          setDisplayText(currentString.slice(0, charIndex - 1));
+          setDisplayText(current.slice(0, charIndex - 1));
           setCharIndex((c) => c - 1);
         } else {
           setDeleting(false);
-          setStringIndex((s) => (s + 1) % TYPING_STRINGS.length);
+          setRoleIndex((i) => (i + 1) % ROLES.length);
         }
       }
-    }, typingSpeed);
+    }, speed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, deleting, stringIndex]);
+  }, [charIndex, deleting, roleIndex]);
 
   return (
-    <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 py-16 text-center relative overflow-hidden">
-      {/* Decorative pixel corners */}
-      <div className="absolute top-8 left-8 w-8 h-8 border-t-4 border-l-4 border-[#22c55e] opacity-60" />
-      <div className="absolute top-8 right-8 w-8 h-8 border-t-4 border-r-4 border-[#22c55e] opacity-60" />
-      <div className="absolute bottom-8 left-8 w-8 h-8 border-b-4 border-l-4 border-[#22c55e] opacity-60" />
-      <div className="absolute bottom-8 right-8 w-8 h-8 border-b-4 border-r-4 border-[#22c55e] opacity-60" />
-
-      {/* Pixel avatar placeholder */}
-      <div className="float-anim mb-8 relative">
-        <div className="w-24 h-24 border-4 border-[#22c55e] shadow-[8px_8px_0_#22c55e] bg-[#111111] flex items-center justify-center relative overflow-hidden">
-          <div className="text-4xl select-none">👾</div>
-        </div>
-        <div
-          className="absolute -top-2 -right-2 text-[#fbbf24] text-[8px]"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
-        >
-          LVL 10
-        </div>
+    <section className="min-h-[90vh] flex flex-col justify-center px-4 py-16 max-w-5xl mx-auto">
+      {/* Label strip */}
+      <div
+        className="flex items-center gap-3 mb-10 text-xs font-medium text-[#7A7870] uppercase tracking-widest"
+        style={{ fontFamily: '"DM Sans", sans-serif' }}
+      >
+        <span className="w-8 h-[2px] bg-[#1C1C1A] inline-block" />
+        <span>Quality · Food Safety · Supply Chain</span>
       </div>
 
-      {/* Name */}
-      <h1
-        className="text-[#f0f0f0] text-xl sm:text-2xl md:text-3xl mb-3 leading-relaxed"
-        style={{ fontFamily: '"Press Start 2P", monospace' }}
+      {/* Main headline — mixed colour editorial treatment */}
+      <div
+        className="leading-none tracking-tighter mb-10"
+        style={{ fontFamily: '"Syne", sans-serif' }}
       >
-        DALE{" "}
-        <span className="text-[#22c55e] text-glow">COSGROVE</span>
-      </h1>
+        <div className="text-[clamp(4rem,12vw,8rem)] font-black text-[#1C1C1A]">
+          DALE
+        </div>
+        <div className="text-[clamp(4rem,12vw,8rem)] font-black">
+          <span className="text-[#22c55e]">C</span>
+          <span className="text-[#E63946]">O</span>
+          <span className="text-[#1C1C1A]">S</span>
+          <span className="text-[#2E3A8C]">G</span>
+          <span className="text-[#1C1C1A]">R</span>
+          <span className="text-[#F59E0B]">O</span>
+          <span className="text-[#1C1C1A]">V</span>
+          <span className="text-[#22c55e]">E</span>
+        </div>
+      </div>
 
       {/* Typing tagline */}
-      <div
-        className="text-[#fbbf24] text-[10px] sm:text-xs mb-8 min-h-[2rem] flex items-center gap-1"
-        style={{ fontFamily: '"Press Start 2P", monospace' }}
-      >
-        <span className="text-[#888888]">&gt;</span>{" "}
-        <span>{displayText}</span>
-        <span className="text-[#22c55e] animate-pulse">█</span>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-1.5 h-7 bg-[#22c55e] shrink-0" />
+        <p
+          className="text-xl sm:text-2xl font-semibold text-[#1C1C1A] min-h-[1.75rem]"
+          style={{ fontFamily: '"Syne", sans-serif' }}
+        >
+          {displayText}
+          <span className="cursor-blink ml-0.5 text-[#22c55e]">|</span>
+        </p>
       </div>
 
-      {/* Stats bar — game character style */}
-      <div className="border-2 border-[#333333] bg-[#111111] px-6 py-4 mb-10 max-w-md w-full shadow-[4px_4px_0_#333333]">
-        <div
-          className="text-[#888888] text-[8px] mb-3 text-left"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
-        >
-          PLAYER STATS
+      {/* Meta row */}
+      <div
+        className="flex flex-wrap gap-6 mb-10 text-sm text-[#7A7870]"
+        style={{ fontFamily: '"DM Sans", sans-serif' }}
+      >
+        <div className="flex items-center gap-2">
+          <Briefcase size={14} />
+          <span>Quality Performance &amp; Projects Manager · FBC UK</span>
         </div>
-        <div className="space-y-2">
-          {[
-            { label: "FOOD SAFETY", value: "██████████", color: "#22c55e" },
-            { label: "TECH", value: "████████░░", color: "#22c55e" },
-            { label: "DATA", value: "███████░░░", color: "#fbbf24" },
-            { label: "INNOVATION", value: "█████████░", color: "#fbbf24" },
-          ].map((stat) => (
-            <div key={stat.label} className="flex items-center gap-3">
-              <span
-                className="text-[#888888] text-[7px] w-24 shrink-0 text-left"
-                style={{ fontFamily: '"Press Start 2P", monospace' }}
-              >
-                {stat.label}
-              </span>
-              <span
-                className="text-[8px] tracking-tight"
-                style={{ color: stat.color, fontFamily: '"Press Start 2P", monospace' }}
-              >
-                {stat.value}
-              </span>
-            </div>
-          ))}
+        <div className="flex items-center gap-2">
+          <MapPin size={14} />
+          <span>Batley, England, UK</span>
         </div>
       </div>
 
       {/* CTA buttons */}
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-3 mb-16">
         <Link href="/cv">
-          <Button variant="primary" size="md">
-            VIEW CV
-          </Button>
+          <Button variant="primary" size="md">View CV</Button>
         </Link>
         <Link href="/#projects">
-          <Button variant="secondary" size="md">
-            MY PROJECTS
-          </Button>
+          <Button variant="secondary" size="md">My Projects</Button>
         </Link>
         <Link href="/#contact">
-          <Button variant="ghost" size="md">
-            CONTACT
-          </Button>
+          <Button variant="ghost" size="md">Contact</Button>
         </Link>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#444444] text-[7px] animate-bounce"
-        style={{ fontFamily: '"Press Start 2P", monospace' }}
-      >
-        ▼ SCROLL ▼
+      {/* Stats strip */}
+      <div className="border-t-2 border-b-2 border-[#1C1C1A] py-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { label: "Years Experience", value: "15+" },
+          { label: "Industry", value: "Food Mfg" },
+          { label: "Current Role", value: "Q&P Mgr" },
+          { label: "Certifications", value: "3" },
+        ].map((stat) => (
+          <div key={stat.label} className="text-center">
+            <div
+              className="text-3xl font-black text-[#22c55e] leading-none mb-1"
+              style={{ fontFamily: '"Syne", sans-serif' }}
+            >
+              {stat.value}
+            </div>
+            <div
+              className="text-xs text-[#7A7870] uppercase tracking-wide"
+              style={{ fontFamily: '"DM Sans", sans-serif' }}
+            >
+              {stat.label}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

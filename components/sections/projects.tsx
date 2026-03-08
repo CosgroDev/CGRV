@@ -7,11 +7,11 @@ import Link from "next/link";
 const projects = [
   {
     id: "01",
-    title: "FOOD SAFETY DASHBOARD",
+    title: "Food Safety Dashboard",
     description:
       "An internal data dashboard built to visualise food safety KPIs, audit results, and non-conformance trends across production lines. Transforms spreadsheet chaos into actionable insights.",
-    tags: ["DATA", "EXCEL", "ANALYSIS", "FOOD SAFETY"],
-    status: "COMPLETE",
+    tags: ["Data", "Excel", "Analysis", "Food Safety"],
+    status: "Complete",
     statusColor: "green" as const,
     icon: "📊",
     github: null,
@@ -19,11 +19,11 @@ const projects = [
   },
   {
     id: "02",
-    title: "PM FRAMEWORK TOOLKIT",
+    title: "PM Framework Toolkit",
     description:
       "A structured project management framework designed for food manufacturing environments. Includes templates, KPI tracking systems, and stage-gate processes tailored to regulated industries.",
-    tags: ["PROJECT MGMT", "PROCESS", "FRAMEWORKS", "DOCS"],
-    status: "ONGOING",
+    tags: ["Project Mgmt", "Process", "Frameworks", "Docs"],
+    status: "Ongoing",
     statusColor: "yellow" as const,
     icon: "🗂️",
     github: null,
@@ -31,11 +31,11 @@ const projects = [
   },
   {
     id: "03",
-    title: "HACCP DIGITAL SYSTEM",
+    title: "HACCP Digital System",
     description:
       "Digitising and modernising a traditional paper-based HACCP system. Exploring tools to make critical control point monitoring faster, more reliable, and audit-ready from day one.",
-    tags: ["HACCP", "DIGITALISATION", "FOOD SAFETY", "SYSTEMS"],
-    status: "IN PROGRESS",
+    tags: ["HACCP", "Digitalisation", "Food Safety", "Systems"],
+    status: "In Progress",
     statusColor: "yellow" as const,
     icon: "🔬",
     github: null,
@@ -43,13 +43,13 @@ const projects = [
   },
   {
     id: "04",
-    title: "THIS PORTFOLIO",
+    title: "This Portfolio",
     description:
-      "My personal portfolio site — built with Next.js, TypeScript, and a full retro 8-bit style. An excuse to learn modern web dev while building something genuinely useful.",
-    tags: ["NEXT.JS", "TYPESCRIPT", "8BIT", "WEB DEV"],
-    status: "COMPLETE",
+      "My personal portfolio site — built with Next.js, TypeScript, and an editorial design. An excuse to learn modern web dev while building something genuinely useful.",
+    tags: ["Next.js", "TypeScript", "Editorial", "Web Dev"],
+    status: "Complete",
     statusColor: "green" as const,
-    icon: "🕹️",
+    icon: "✦",
     github: "https://github.com/CosgroDev/CGRV",
     demo: null,
   },
@@ -58,21 +58,20 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="py-16 px-4 max-w-5xl mx-auto">
-      {/* Section header */}
       <div className="mb-12">
-        <div
-          className="text-[#22c55e] text-[8px] mb-3"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+        <p
+          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
+          style={{ fontFamily: '"DM Sans", sans-serif' }}
         >
-          // SECTION_02
-        </div>
+          02 — Projects
+        </p>
         <h2
-          className="text-[#f0f0f0] text-lg sm:text-xl mb-4"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+          className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
+          style={{ fontFamily: '"Syne", sans-serif' }}
         >
-          PROJECTS
+          My <span className="text-[#E63946]">Projects</span>
         </h2>
-        <div className="pixel-divider" />
+        <div className="editorial-divider" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,8 +82,8 @@ export function Projects() {
                 <span className="text-3xl">{project.icon}</span>
                 <div className="flex items-center gap-2">
                   <span
-                    className="text-[#444444] text-[8px]"
-                    style={{ fontFamily: '"Press Start 2P", monospace' }}
+                    className="text-sm font-black text-[#D5D1C9]"
+                    style={{ fontFamily: '"Syne", sans-serif' }}
                   >
                     #{project.id}
                   </span>
@@ -97,9 +96,7 @@ export function Projects() {
               <CardDescription className="mb-4">{project.description}</CardDescription>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <Badge key={tag} variant="default">
-                    {tag}
-                  </Badge>
+                  <Badge key={tag} variant="default">{tag}</Badge>
                 ))}
               </div>
             </CardContent>
@@ -109,7 +106,7 @@ export function Projects() {
                   <Link href={project.github} target="_blank" rel="noopener noreferrer">
                     <Button variant="ghost" size="sm">
                       <Github size={12} className="mr-2" />
-                      CODE
+                      Code
                     </Button>
                   </Link>
                 )}
@@ -117,7 +114,7 @@ export function Projects() {
                   <Link href={project.demo} target="_blank" rel="noopener noreferrer">
                     <Button variant="secondary" size="sm">
                       <ExternalLink size={12} className="mr-2" />
-                      DEMO
+                      Demo
                     </Button>
                   </Link>
                 )}
@@ -128,11 +125,10 @@ export function Projects() {
       </div>
 
       <div
-        className="mt-8 text-center text-[#888888] text-[8px]"
-        style={{ fontFamily: '"Press Start 2P", monospace' }}
+        className="mt-8 text-center text-sm text-[#7A7870] font-medium"
+        style={{ fontFamily: '"DM Sans", sans-serif' }}
       >
-        MORE PROJECTS LOADING...
-        <span className="text-[#22c55e] animate-pulse ml-1">█</span>
+        More projects coming soon —
       </div>
     </section>
   );

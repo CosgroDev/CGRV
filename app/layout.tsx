@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="scanlines pixel-grid-bg min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-[#F6F4EF]">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

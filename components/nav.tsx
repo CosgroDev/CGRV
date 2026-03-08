@@ -7,12 +7,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "HOME" },
-  { href: "/#about", label: "ABOUT" },
-  { href: "/#projects", label: "PROJECTS" },
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
   { href: "/cv", label: "CV" },
-  { href: "/blog", label: "BLOG" },
-  { href: "/#contact", label: "CONTACT" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -20,15 +20,15 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0a0a0a] border-b-2 border-[#22c55e]">
+    <nav className="sticky top-0 z-50 bg-[#F6F4EF] border-b-2 border-[#1C1C1A]">
       <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="text-[#22c55e] text-[10px] hover:text-[#fbbf24] transition-colors leading-none"
-          style={{ fontFamily: '"Press Start 2P", monospace' }}
+          className="font-bold text-xl leading-none tracking-tight hover:text-[#22c55e] transition-colors"
+          style={{ fontFamily: '"Syne", sans-serif' }}
         >
-          DC<span className="text-[#fbbf24]">.exe</span>
+          Dale <span className="text-[#22c55e]">Cosgrove</span>
         </Link>
 
         {/* Desktop nav */}
@@ -38,12 +38,12 @@ export function Nav() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[8px] transition-colors hover:text-[#22c55e]",
+                "text-sm font-medium uppercase tracking-widest transition-colors hover:text-[#22c55e]",
                 pathname === link.href
-                  ? "text-[#22c55e] border-b-2 border-[#22c55e] pb-1"
-                  : "text-[#888888]"
+                  ? "text-[#1C1C1A] border-b-2 border-[#22c55e] pb-0.5"
+                  : "text-[#7A7870]"
               )}
-              style={{ fontFamily: '"Press Start 2P", monospace' }}
+              style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#22c55e] p-1"
+          className="md:hidden text-[#1C1C1A] p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -62,19 +62,19 @@ export function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t-2 border-[#333333] bg-[#0a0a0a]">
+        <div className="md:hidden border-t-2 border-[#1C1C1A] bg-[#F6F4EF]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "block px-4 py-3 text-[8px] border-b border-[#1a1a1a] transition-colors hover:text-[#22c55e] hover:bg-[#111111]",
-                pathname === link.href ? "text-[#22c55e]" : "text-[#888888]"
+                "block px-6 py-4 text-sm font-medium uppercase tracking-widest border-b border-[#D5D1C9] transition-colors hover:text-[#22c55e] hover:bg-white",
+                pathname === link.href ? "text-[#22c55e]" : "text-[#7A7870]"
               )}
-              style={{ fontFamily: '"Press Start 2P", monospace' }}
+              style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
-              &gt; {link.label}
+              {link.label}
             </Link>
           ))}
         </div>

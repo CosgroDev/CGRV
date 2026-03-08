@@ -9,10 +9,10 @@ function Card({ className, variant = "default", ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-[#111111] p-6",
-        variant === "default" && "border-2 border-[#333333] shadow-[4px_4px_0_#333333]",
-        variant === "green" && "border-2 border-[#22c55e] shadow-[4px_4px_0_#22c55e]",
-        variant === "yellow" && "border-2 border-[#fbbf24] shadow-[4px_4px_0_#fbbf24]",
+        "bg-white p-6",
+        variant === "default" && "border-2 border-[#1C1C1A]",
+        variant === "green" && "border-2 border-[#22c55e]",
+        variant === "yellow" && "border-2 border-[#F59E0B]",
         className
       )}
       {...props}
@@ -27,8 +27,11 @@ function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
 function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className={cn("text-[#22c55e] text-xs leading-relaxed mb-2", className)}
-      style={{ fontFamily: '"Press Start 2P", monospace' }}
+      className={cn(
+        "text-[#1C1C1A] font-bold text-sm leading-snug mb-2 uppercase tracking-wide",
+        className
+      )}
+      style={{ fontFamily: '"Syne", sans-serif' }}
       {...props}
     />
   );
@@ -37,7 +40,8 @@ function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) 
 function CardDescription({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-[#888888] text-[10px] leading-relaxed", className)}
+      className={cn("text-[#7A7870] text-sm leading-relaxed", className)}
+      style={{ fontFamily: '"DM Sans", sans-serif' }}
       {...props}
     />
   );
