@@ -99,7 +99,7 @@ export function Hero() {
         </div>
         <div className="flex items-center gap-2">
           <MapPin size={14} />
-          <span>Batley, England, UK</span>
+          <span>Barnsley, South Yorkshire, UK</span>
         </div>
       </div>
 

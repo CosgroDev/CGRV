@@ -271,7 +271,7 @@ export default function CVPage() {
               <div className="flex items-center gap-2 text-sm text-[#7A7870]"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}>
                 <MapPin size={13} />
-                <span>Batley, England, UK</span>
+                <span>Barnsley, South Yorkshire, UK</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[#7A7870]"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}>
