@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics />
-      <body className="min-h-screen flex flex-col bg-[#F6F4EF]">
+      <body className="min-h-screen flex flex-col bg-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

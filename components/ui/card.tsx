@@ -2,17 +2,16 @@ import { cn } from "@/lib/utils";
 import { type HTMLAttributes } from "react";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "green" | "yellow";
+  variant?: "default" | "green";
 }
 
 function Card({ className, variant = "default", ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-white p-6",
-        variant === "default" && "border-2 border-[#1C1C1A]",
-        variant === "green" && "border-2 border-[#22c55e]",
-        variant === "yellow" && "border-2 border-[#F59E0B]",
+        "bg-white p-6 rounded-sm",
+        variant === "default" && "border border-[#e0e0e0]",
+        variant === "green" && "border border-[#e0e0e0] border-l-4 border-l-[#1e4d2b]",
         className
       )}
       {...props}
@@ -28,10 +27,10 @@ function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) 
   return (
     <h3
       className={cn(
-        "text-[#1C1C1A] font-bold text-sm leading-snug mb-2 uppercase tracking-wide",
+        "text-[#111111] font-bold text-sm leading-snug mb-2 uppercase tracking-wide",
         className
       )}
-      style={{ fontFamily: '"Syne", sans-serif' }}
+      style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
       {...props}
     />
   );
@@ -40,8 +39,8 @@ function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) 
 function CardDescription({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-[#7A7870] text-sm leading-relaxed", className)}
-      style={{ fontFamily: '"DM Sans", sans-serif' }}
+      className={cn("text-[#888888] text-sm leading-relaxed", className)}
+      style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
       {...props}
     />
   );

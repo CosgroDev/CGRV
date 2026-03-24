@@ -20,7 +20,7 @@ const projects = [
     id: "02",
     title: "121 Darts Challenge App",
     description:
-      "Designed and built a desktop application that helps players practice the 121 checkout challenge while tracking performance metrics. The app records checkouts, darts used, success rates, and player statistics. It also suggests optimal checkout routes and visualises targets on a dartboard graphic, with player data stored for analysis to track improvement over time. This project explores the intersection of sports analytics and software development.",
+      "Designed and built a desktop application that helps players practice the 121 checkout challenge while tracking performance metrics. The app records checkouts, darts used, success rates, and player statistics. It also suggests optimal checkout routes and visualises targets on a dartboard graphic, with player data stored for analysis to track improvement over time.",
     tags: ["Python", "Desktop App", "Sports Analytics", "Data"],
     status: "Complete",
     statusColor: "green" as const,
@@ -31,7 +31,7 @@ const projects = [
     id: "03",
     title: "Complaints Insight Engine",
     description:
-      "Built a data analysis pipeline using Python to explore complaint trends across multiple manufacturing sites. Rather than simply counting complaints, the system analyses complaint narratives using topic modelling and clustering techniques to identify recurring themes and hidden patterns. The goal is to move beyond surface metrics and uncover deeper insights that can inform product improvement, manufacturing changes, and preventative actions.",
+      "Built a data analysis pipeline using Python to explore complaint trends across multiple manufacturing sites. Rather than simply counting complaints, the system analyses complaint narratives using topic modelling and clustering techniques to identify recurring themes and hidden patterns. The goal is to move beyond surface metrics and uncover deeper insights that inform product improvement and preventative actions.",
     tags: ["Python", "NLP", "Topic Modelling", "Manufacturing"],
     status: "Complete",
     statusColor: "green" as const,
@@ -53,7 +53,7 @@ const projects = [
     id: "05",
     title: "Supplier Assurance Stage and Gate",
     description:
-      "Developed a digital stage-gate system to manage the approval of new raw materials and packaging. The application guides users through structured approval stages, ensuring key technical, quality, and regulatory checks are completed before materials are introduced to production. Each gate captures approvals, documentation, and risk assessments, creating a full audit trail with logic for conditional steps based on material type and applicability.",
+      "Developed a digital stage-gate system to manage the approval of new raw materials and packaging. The application guides users through structured approval stages, ensuring key technical, quality, and regulatory checks are completed before materials are introduced to production. Each gate captures approvals, documentation, and risk assessments, creating a full audit trail.",
     tags: ["Compliance", "Food Safety", "Workflow", "Approvals"],
     status: "Complete",
     statusColor: "green" as const,
@@ -64,7 +64,7 @@ const projects = [
     id: "06",
     title: "West Green Darts",
     description:
-      "A mobile-first web application for managing a darts team, covering fixtures, live game scoring, player profiles, and comprehensive statistics. Features live 501 scoring with undo functionality and finish guidance, PIN-based team access, season organisation, and tracking of 18+ performance metrics per player. Includes a team dashboard, CSV data export, and progressive web app support optimised for touch devices.",
+      "A mobile-first web application for managing a darts team, covering fixtures, live game scoring, player profiles, and comprehensive statistics. Features live 501 scoring with undo functionality and finish guidance, PIN-based team access, season organisation, and tracking of 18+ performance metrics per player. Includes a team dashboard, CSV data export, and PWA support.",
     tags: ["Next.js", "TypeScript", "SQLite", "PWA"],
     status: "Complete",
     statusColor: "green" as const,
@@ -78,16 +78,16 @@ export function Projects() {
     <section id="projects" className="py-16 px-4 max-w-5xl mx-auto">
       <div className="mb-12">
         <p
-          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
+          className="text-xs font-medium uppercase tracking-widest text-[#888888] mb-3"
+          style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
         >
-          02 / Projects
+          03 / Projects
         </p>
         <h2
-          className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
-          style={{ fontFamily: '"Syne", sans-serif' }}
+          className="text-3xl sm:text-4xl font-black text-[#111111] mb-4"
+          style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
         >
-          My <span className="text-[#E63946]">Projects</span>
+          My <span className="text-[#1e4d2b]">Projects</span>
         </h2>
         <div className="editorial-divider" />
       </div>
@@ -100,8 +100,8 @@ export function Projects() {
                 <span className="text-3xl">{project.icon}</span>
                 <div className="flex items-center gap-2">
                   <span
-                    className="text-sm font-black text-[#D5D1C9]"
-                    style={{ fontFamily: '"Syne", sans-serif' }}
+                    className="text-sm font-black text-[#e0e0e0]"
+                    style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     #{project.id}
                   </span>

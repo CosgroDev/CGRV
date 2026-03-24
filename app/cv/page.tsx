@@ -148,14 +148,14 @@ const certifications = [
     institution: "BRCGS",
     year: "Feb 2021",
     type: "Certification",
-    color: "yellow" as const,
+    color: "default" as const,
   },
   {
     qualification: "HACCP Level 4",
     institution: "Highfield",
     year: "Nov 2020",
     type: "Certification",
-    color: "yellow" as const,
+    color: "default" as const,
   },
 ];
 
@@ -173,10 +173,10 @@ const formalEducation = [
 ];
 
 const companyColors: Record<string, string> = {
-  "Fox's Burton's Companies (FBC UK)": "#22c55e",
-  "Fox's Biscuits": "#F59E0B",
-  "Yorkshire Premier Meat": "#2E3A8C",
-  "DHL": "#E63946",
+  "Fox's Burton's Companies (FBC UK)": "#1e4d2b",
+  "Fox's Biscuits": "#1e4d2b",
+  "Yorkshire Premier Meat": "#888888",
+  "DHL": "#888888",
 };
 
 const skillGroups = [
@@ -249,33 +249,33 @@ export default function CVPage() {
       {/* CV Header */}
       <div className="mb-10">
         <p
-          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-4"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
+          className="text-xs font-medium uppercase tracking-widest text-[#888888] mb-4"
+          style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
         >
           Curriculum Vitae
         </p>
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-6">
           <div>
             <h1
-              className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-1 leading-tight"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-3xl sm:text-4xl font-black text-[#111111] mb-1 leading-tight"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
-              Dale <span className="text-[#22c55e]">Cosgrove</span>
+              Dale <span className="text-[#1e4d2b]">Cosgrove</span>
             </h1>
             <p
-              className="text-base font-semibold text-[#7A7870] mb-4"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="text-base font-semibold text-[#888888] mb-4"
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Quality, Food Safety &amp; Supply Chain Professional
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-sm text-[#7A7870]"
-                style={{ fontFamily: '"DM Sans", sans-serif' }}>
+              <div className="flex items-center gap-2 text-sm text-[#888888]"
+                style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}>
                 <MapPin size={13} />
                 <span>Barnsley, South Yorkshire, UK</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-[#7A7870]"
-                style={{ fontFamily: '"DM Sans", sans-serif' }}>
+              <div className="flex items-center gap-2 text-sm text-[#888888]"
+                style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}>
                 <Briefcase size={13} />
                 <span>FBC UK</span>
               </div>
@@ -309,8 +309,8 @@ export default function CVPage() {
           </CardHeader>
           <CardContent>
             <div
-              className="text-sm text-[#1C1C1A] leading-relaxed space-y-4"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="text-sm text-[#111111] leading-relaxed space-y-4"
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
               <p>
                 Technical Lead working in food manufacturing with a focus on quality, food
@@ -323,9 +323,7 @@ export default function CVPage() {
                 My approach is centred on making systems work better: simplifying, structuring,
                 and making processes easier for teams to use while still meeting modern food
                 safety and quality standards. A key part of my work is turning day-to-day
-                factory activity into structured, trendable data that actually tells a story:
-                from digitising audits and building operational tools to analysing root causes
-                and performance trends.
+                factory activity into structured, trendable data that actually tells a story.
               </p>
               <p>
                 I enjoy working at the intersection of operations, quality, and data. The goal
@@ -339,19 +337,19 @@ export default function CVPage() {
         {/* Career Timeline */}
         <div>
           <div className="flex items-center gap-3 mb-8">
-            <Clock size={18} className="text-[#22c55e]" />
+            <Clock size={18} className="text-[#1e4d2b]" />
             <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-xl font-black text-[#111111]"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Career Timeline
             </h2>
           </div>
           <div className="relative pl-8">
-            <div className="absolute left-3 top-2 bottom-2 w-0.5 bg-[#D5D1C9]" />
+            <div className="absolute left-3 top-2 bottom-2 w-px bg-[#e0e0e0]" />
             <div className="space-y-7">
               {experience.map((job, index) => {
-                const color = companyColors[job.company] ?? "#7A7870";
+                const color = companyColors[job.company] ?? "#888888";
                 return (
                   <div key={index} className="relative">
                     <div
@@ -359,20 +357,20 @@ export default function CVPage() {
                       style={{ borderColor: color }}
                     />
                     <p
-                      className="text-[10px] font-medium uppercase tracking-widest text-[#7A7870] mb-0.5"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}
+                      className="text-[10px] font-medium uppercase tracking-widest text-[#888888] mb-0.5"
+                      style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                     >
                       {job.period}
                     </p>
                     <p
-                      className="text-sm font-black text-[#1C1C1A] leading-tight"
-                      style={{ fontFamily: '"Syne", sans-serif' }}
+                      className="text-sm font-black text-[#111111] leading-tight"
+                      style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
                     >
                       {job.role}
                     </p>
                     <p
                       className="text-sm font-semibold"
-                      style={{ color, fontFamily: '"DM Sans", sans-serif' }}
+                      style={{ color, fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                     >
                       {job.company}
                     </p>
@@ -386,10 +384,10 @@ export default function CVPage() {
         {/* Experience */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <Briefcase size={18} className="text-[#22c55e]" />
+            <Briefcase size={18} className="text-[#1e4d2b]" />
             <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-xl font-black text-[#111111]"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Experience
             </h2>
@@ -402,8 +400,8 @@ export default function CVPage() {
                     <div>
                       <CardTitle>{job.role}</CardTitle>
                       <p
-                        className="text-sm font-semibold text-[#F59E0B] mt-0.5"
-                        style={{ fontFamily: '"DM Sans", sans-serif' }}
+                        className="text-sm font-semibold text-[#1e4d2b] mt-0.5"
+                        style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                       >
                         {job.company}
                       </p>
@@ -414,14 +412,14 @@ export default function CVPage() {
                     </div>
                   </div>
                   <div className="flex flex-wrap items-center gap-4">
-                    <div className="flex items-center gap-1.5 text-xs text-[#7A7870]"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}>
+                    <div className="flex items-center gap-1.5 text-xs text-[#888888]"
+                      style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}>
                       <MapPin size={11} />
                       <span>{job.location}</span>
                     </div>
                     <span
-                      className="text-xs text-[#7A7870]"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}
+                      className="text-xs text-[#888888]"
+                      style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                     >
                       {job.period}
                     </span>
@@ -429,14 +427,14 @@ export default function CVPage() {
                 </CardHeader>
                 <CardContent>
                   <p
-                    className="text-sm text-[#1C1C1A] leading-relaxed mb-4"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-sm text-[#111111] leading-relaxed mb-4"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     {job.description}
                   </p>
                   <p
-                    className="text-xs font-bold text-[#22c55e] uppercase tracking-wide mb-2"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-xs font-bold text-[#1e4d2b] uppercase tracking-wide mb-2"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     Key achievements:
                   </p>
@@ -444,10 +442,10 @@ export default function CVPage() {
                     {job.achievements.map((achievement, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-[#7A7870] leading-relaxed"
-                        style={{ fontFamily: '"DM Sans", sans-serif' }}
+                        className="flex items-start gap-2 text-sm text-[#888888] leading-relaxed"
+                        style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                       >
-                        <span className="text-[#22c55e] shrink-0 mt-0.5">▸</span>
+                        <span className="text-[#1e4d2b] shrink-0 mt-0.5">▸</span>
                         <span>{achievement}</span>
                       </li>
                     ))}
@@ -470,10 +468,10 @@ export default function CVPage() {
         {/* Skills */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <Wrench size={18} className="text-[#22c55e]" />
+            <Wrench size={18} className="text-[#1e4d2b]" />
             <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-xl font-black text-[#111111]"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Skills
             </h2>
@@ -499,10 +497,10 @@ export default function CVPage() {
         {/* Certifications */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <Award size={18} className="text-[#22c55e]" />
+            <Award size={18} className="text-[#1e4d2b]" />
             <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-xl font-black text-[#111111]"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Certifications
             </h2>
@@ -512,21 +510,21 @@ export default function CVPage() {
               <Card key={index} variant="default">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    <Award size={14} className="text-[#F59E0B]" />
+                    <Award size={14} className="text-[#1e4d2b]" />
                     <Badge variant={cert.color}>{cert.type}</Badge>
                   </div>
                   <CardTitle>{cert.qualification}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p
-                    className="text-sm text-[#7A7870]"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-sm text-[#888888]"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     {cert.institution}
                   </p>
                   <p
-                    className="text-sm font-semibold text-[#F59E0B] mt-1"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-sm font-semibold text-[#1e4d2b] mt-1"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     {cert.year}
                   </p>
@@ -539,10 +537,10 @@ export default function CVPage() {
         {/* Education */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <GraduationCap size={18} className="text-[#22c55e]" />
+            <GraduationCap size={18} className="text-[#1e4d2b]" />
             <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-xl font-black text-[#111111]"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Education
             </h2>
@@ -552,21 +550,21 @@ export default function CVPage() {
               <Card key={index} variant="default">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    <GraduationCap size={14} className="text-[#7A7870]" />
+                    <GraduationCap size={14} className="text-[#888888]" />
                     <Badge variant="default">Further Education</Badge>
                   </div>
                   <CardTitle>{edu.qualification}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p
-                    className="text-sm text-[#7A7870]"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-sm text-[#888888]"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     {edu.institution}
                   </p>
                   <p
-                    className="text-sm font-semibold text-[#F59E0B] mt-1"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
+                    className="text-sm font-semibold text-[#888888] mt-1"
+                    style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
                   >
                     {edu.period}
                   </p>
@@ -580,8 +578,8 @@ export default function CVPage() {
         <Card variant="green" className="text-center no-print">
           <CardContent className="py-8">
             <p
-              className="text-lg font-bold text-[#1C1C1A] mb-6"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-lg font-bold text-[#111111] mb-6"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               Interested in working together?
             </p>

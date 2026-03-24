@@ -20,15 +20,15 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#F6F4EF] border-b-2 border-[#1C1C1A]">
+    <nav className="sticky top-0 z-50 bg-white border-b border-[#e0e0e0]">
       <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="font-bold text-xl leading-none tracking-tight hover:text-[#22c55e] transition-colors"
-          style={{ fontFamily: '"Syne", sans-serif' }}
+          className="font-bold text-xl leading-none tracking-tight text-[#111111] hover:text-[#1e4d2b] transition-colors"
+          style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
         >
-          Dale <span className="text-[#22c55e]">Cosgrove</span>
+          Dale <span className="text-[#1e4d2b]">Cosgrove</span>
         </Link>
 
         {/* Desktop nav */}
@@ -38,12 +38,12 @@ export function Nav() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium uppercase tracking-widest transition-colors hover:text-[#22c55e]",
+                "text-sm font-medium uppercase tracking-widest transition-colors hover:text-[#1e4d2b]",
                 pathname === link.href
-                  ? "text-[#1C1C1A] border-b-2 border-[#22c55e] pb-0.5"
-                  : "text-[#7A7870]"
+                  ? "text-[#1e4d2b] border-b-2 border-[#1e4d2b] pb-0.5"
+                  : "text-[#888888]"
               )}
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#1C1C1A] p-1"
+          className="md:hidden text-[#111111] p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -62,17 +62,17 @@ export function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t-2 border-[#1C1C1A] bg-[#F6F4EF]">
+        <div className="md:hidden border-t border-[#e0e0e0] bg-white">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "block px-6 py-4 text-sm font-medium uppercase tracking-widest border-b border-[#D5D1C9] transition-colors hover:text-[#22c55e] hover:bg-white",
-                pathname === link.href ? "text-[#22c55e]" : "text-[#7A7870]"
+                "block px-6 py-4 text-sm font-medium uppercase tracking-widest border-b border-[#e0e0e0] transition-colors hover:text-[#1e4d2b] hover:bg-[#f4f4f4]",
+                pathname === link.href ? "text-[#1e4d2b]" : "text-[#888888]"
               )}
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
               {link.label}
             </Link>

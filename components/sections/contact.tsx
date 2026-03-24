@@ -8,16 +8,16 @@ export function Contact() {
     <section id="contact" className="py-16 px-4 max-w-5xl mx-auto">
       <div className="mb-12">
         <p
-          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-3"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
+          className="text-xs font-medium uppercase tracking-widest text-[#888888] mb-3"
+          style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
         >
           04 / Contact
         </p>
         <h2
-          className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-4"
-          style={{ fontFamily: '"Syne", sans-serif' }}
+          className="text-3xl sm:text-4xl font-black text-[#111111] mb-4"
+          style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
         >
-          Get in <span className="text-[#2E3A8C]">Touch</span>
+          Get in <span className="text-[#1e4d2b]">Touch</span>
         </h2>
         <div className="editorial-divider" />
       </div>
@@ -29,11 +29,10 @@ export function Contact() {
           </CardHeader>
           <CardContent>
             <p
-              className="text-sm text-[#1C1C1A] leading-relaxed mb-8"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="text-sm text-[#111111] leading-relaxed mb-8"
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
-              Whether you&apos;re a recruiter, a fellow tech enthusiast, or someone curious
-              about food safety and technology. I&apos;d love to hear from you.
+              Recruiter, fellow tech enthusiast, or curious about food safety and technology — get in touch.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,10 +56,10 @@ export function Contact() {
             </div>
 
             <div
-              className="mt-8 border-t border-[#D5D1C9] pt-6 text-sm text-[#7A7870]"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="mt-8 border-t border-[#e0e0e0] pt-6 text-sm text-[#888888]"
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
-              <p className="font-semibold text-[#22c55e] mb-1">Response time:</p>
+              <p className="font-semibold text-[#1e4d2b] mb-1">Response time:</p>
               <p>Usually within 24–48 hours</p>
             </div>
           </CardContent>

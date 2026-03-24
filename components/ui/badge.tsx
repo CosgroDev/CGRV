@@ -9,16 +9,16 @@ function Badge({ className, variant = "default", ...props }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-block px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide leading-none",
+        "inline-block px-2 py-1 text-[11px] font-semibold uppercase tracking-wider leading-none rounded-sm",
         {
-          "border border-[#D5D1C9] text-[#7A7870] bg-transparent": variant === "default",
-          "border border-[#22c55e] text-[#22c55e] bg-[#22c55e]/10": variant === "green",
-          "border border-[#F59E0B] text-[#F59E0B] bg-[#F59E0B]/10": variant === "yellow",
-          "border border-[#E63946] text-[#E63946] bg-[#E63946]/10": variant === "red",
+          "bg-[#f4f4f4] text-[#555555]": variant === "default",
+          "bg-[#e8f0ea] text-[#1e4d2b]": variant === "green",
+          "bg-[#f4f4f4] text-[#555555]": variant === "yellow",
+          "bg-[#fdf0ee] text-[#c0392b]": variant === "red",
         },
         className
       )}
-      style={{ fontFamily: '"DM Sans", sans-serif' }}
+      style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
       {...props}
     />
   );

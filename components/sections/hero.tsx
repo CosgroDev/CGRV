@@ -54,14 +54,14 @@ export function Hero() {
     <section className="min-h-[90vh] flex flex-col justify-center px-4 py-16 max-w-5xl mx-auto">
       {/* Label strip */}
       <div
-        className="flex items-center justify-between gap-3 mb-10 text-xs font-medium text-[#7A7870] uppercase tracking-widest"
-        style={{ fontFamily: '"DM Sans", sans-serif' }}
+        className="flex items-center justify-between gap-3 mb-10 text-xs font-medium text-[#888888] uppercase tracking-widest"
+        style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
       >
         <div className="flex items-center gap-3">
-          <span className="w-8 h-[2px] bg-[#1C1C1A] inline-block" />
+          <span className="w-8 h-[1px] bg-[#e0e0e0] inline-block" />
           <span>Quality · Food Safety · Supply Chain</span>
         </div>
-        <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#1C1C1A] shrink-0">
+        <div className="w-[96px] h-[96px] rounded-full overflow-hidden border border-[#e0e0e0] shrink-0">
           <Image
             src="/A178F8E3-B240-4451-A130-1748FF5A6504.png"
             alt="Dale Cosgrove"
@@ -73,42 +73,35 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Main headline — mixed colour editorial treatment */}
+      {/* Main headline */}
       <div
         className="leading-none tracking-tighter mb-10"
-        style={{ fontFamily: '"Syne", sans-serif' }}
+        style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
       >
-        <div className="text-[clamp(4rem,12vw,8rem)] font-black text-[#1C1C1A]">
+        <div className="text-[clamp(4rem,12vw,8rem)] font-black text-[#111111]">
           DALE
         </div>
-        <div className="text-[clamp(4rem,12vw,8rem)] font-black">
-          <span className="text-[#22c55e]">C</span>
-          <span className="text-[#E63946]">O</span>
-          <span className="text-[#1C1C1A]">S</span>
-          <span className="text-[#2E3A8C]">G</span>
-          <span className="text-[#1C1C1A]">R</span>
-          <span className="text-[#F59E0B]">O</span>
-          <span className="text-[#1C1C1A]">V</span>
-          <span className="text-[#22c55e]">E</span>
+        <div className="text-[clamp(4rem,12vw,8rem)] font-black text-[#1e4d2b]">
+          COSGROVE
         </div>
       </div>
 
       {/* Typing tagline */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-1.5 h-7 bg-[#22c55e] shrink-0" />
+        <div className="w-1 h-7 bg-[#1e4d2b] shrink-0" />
         <p
-          className="text-xl sm:text-2xl font-semibold text-[#1C1C1A] min-h-[1.75rem]"
-          style={{ fontFamily: '"Syne", sans-serif' }}
+          className="text-xl sm:text-2xl font-semibold text-[#111111] min-h-[1.75rem]"
+          style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
         >
           {displayText}
-          <span className="cursor-blink ml-0.5 text-[#22c55e]">|</span>
+          <span className="cursor-blink ml-0.5 text-[#1e4d2b]">|</span>
         </p>
       </div>
 
       {/* Meta row */}
       <div
-        className="flex flex-wrap gap-6 mb-10 text-sm text-[#7A7870]"
-        style={{ fontFamily: '"DM Sans", sans-serif' }}
+        className="flex flex-wrap gap-6 mb-10 text-sm text-[#888888]"
+        style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
       >
         <div className="flex items-center gap-2">
           <Briefcase size={14} />
@@ -134,7 +127,7 @@ export function Hero() {
       </div>
 
       {/* Stats strip */}
-      <div className="border-t-2 border-b-2 border-[#1C1C1A] py-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="border-t border-b border-[#e0e0e0] py-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
           { label: "Years Experience", value: `${yearsFrom(CAREER_START)}+` },
           { label: "Industry", value: "Food Mfg" },
@@ -143,14 +136,14 @@ export function Hero() {
         ].map((stat) => (
           <div key={stat.label} className="text-center">
             <div
-              className="text-3xl font-black text-[#22c55e] leading-none mb-1"
-              style={{ fontFamily: '"Syne", sans-serif' }}
+              className="text-3xl font-black text-[#1e4d2b] leading-none mb-1"
+              style={{ fontFamily: '"Aspekta", "Plus Jakarta Sans", Arial, sans-serif' }}
             >
               {stat.value}
             </div>
             <div
-              className="text-xs text-[#7A7870] uppercase tracking-wide"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="text-xs text-[#888888] uppercase tracking-wide"
+              style={{ fontFamily: '"Plus Jakarta Sans", Arial, sans-serif' }}
             >
               {stat.label}
             </div>
