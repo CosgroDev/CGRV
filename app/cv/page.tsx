@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, MapPin, Briefcase, GraduationCap, Award, Wrench, Clock } from "lucide-react";
-import Link from "next/link";
-import { durationFromPeriod } from "@/lib/dates";
 import { PrintCVButton } from "@/components/print-cv-button";
-
 export const metadata: Metadata = {
   title: "CV | Dale Cosgrove",
-  description: "Curriculum Vitae of Dale Cosgrove, Quality, Food Safety & Supply Chain Professional",
+  description:
+    "Food safety, quality, supply chain and digital systems experience.",
 };
-
 const experience = [
   {
     role: "Quality Performance & Projects Manager",
@@ -113,7 +106,8 @@ const experience = [
     period: "May 2011 – Jul 2013",
     location: "South Kirkby, West Yorkshire, UK",
     type: "Full-time",
-    description: "Managed outbound logistics and despatch operations within a chilled food manufacturing environment.",
+    description:
+      "Managed outbound logistics and despatch operations within a chilled food manufacturing environment.",
     achievements: [
       "Coordinated order picking, loading, and despatch of chilled products",
       "Maintained cold chain integrity and traceability documentation",
@@ -126,7 +120,8 @@ const experience = [
     period: "Jun 2009 – Sep 2009",
     location: "Normanton, West Yorkshire, UK",
     type: "Temporary",
-    description: "Supported delivery operations as drivers mate for a national logistics provider.",
+    description:
+      "Supported delivery operations as drivers mate for a national logistics provider.",
     achievements: [
       "Assisted with delivery of parcels and goods across regional routes",
       "Maintained accurate delivery documentation and customer receipts",
@@ -166,18 +161,12 @@ const formalEducation = [
     period: "2009 – 2011",
   },
   {
-    qualification: "BTEC National Diploma: Art & Design, Photography, Graphics & Fine Art",
+    qualification:
+      "BTEC National Diploma: Art & Design, Photography, Graphics & Fine Art",
     institution: "Barnsley College",
     period: "2007 – 2009",
   },
 ];
-
-const companyColors: Record<string, string> = {
-  "Fox's Burton's Companies (FBC UK)": "#22c55e",
-  "Fox's Biscuits": "#F59E0B",
-  "Yorkshire Premier Meat": "#2E3A8C",
-  "DHL": "#E63946",
-};
 
 const skillGroups = [
   {
@@ -245,363 +234,82 @@ const skillGroups = [
 
 export default function CVPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      {/* CV Header */}
-      <div className="mb-10">
-        <p
-          className="text-xs font-medium uppercase tracking-widest text-[#7A7870] mb-4"
-          style={{ fontFamily: '"DM Sans", sans-serif' }}
-        >
-          Curriculum Vitae
+    <div className="wrap section">
+      <div className="page-heading">
+        <p className="eyebrow">BACKGROUND / EXPERIENCE</p>
+        <h1>
+          Dale Cosgrove<span className="orange">.</span>
+        </h1>
+        <p>
+          Food safety, quality, supply chain and practical digital improvement.
         </p>
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-6">
-          <div>
-            <h1
-              className="text-3xl sm:text-4xl font-black text-[#1C1C1A] mb-1 leading-tight"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Dale <span className="text-[#22c55e]">Cosgrove</span>
-            </h1>
-            <p
-              className="text-base font-semibold text-[#7A7870] mb-4"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
-            >
-              Quality, Food Safety &amp; Supply Chain Professional
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-sm text-[#7A7870]"
-                style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                <MapPin size={13} />
-                <span>Barnsley, South Yorkshire, UK</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-[#7A7870]"
-                style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                <Briefcase size={13} />
-                <span>FBC UK</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2 shrink-0 no-print">
-            <Link href="mailto:dale@cgrv.co.uk">
-              <Button variant="ghost" size="sm" className="w-full sm:w-auto">
-                <Mail size={12} className="mr-2" />
-                Email
-              </Button>
-            </Link>
-            <Link href="https://www.linkedin.com/in/dale-cosgrove-738a18a4" target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary" size="sm" className="w-full sm:w-auto">
-                <Linkedin size={12} className="mr-2" />
-                LinkedIn
-              </Button>
-            </Link>
-            <PrintCVButton />
-          </div>
+        <div className="hero-actions">
+          <PrintCVButton />
+          <a className="text-link" href="mailto:dale@cgrv.co.uk">
+            dale@cgrv.co.uk
+          </a>
         </div>
-        <div className="editorial-divider" />
       </div>
-
-      <div className="space-y-10">
-        {/* Profile Summary */}
-        <Card variant="green">
-          <CardHeader>
-            <CardTitle>Profile Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div
-              className="text-sm text-[#1C1C1A] leading-relaxed space-y-4"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
-            >
-              <p>
-                Technical Lead working in food manufacturing with a focus on quality, food
-                safety, and improving how systems operate in real production environments.
-                Specialising in HACCP, risk assessment, and food safety frameworks such as
-                BRCGS and retailer standards, with hands-on experience implementing practical
-                controls across manufacturing operations.
-              </p>
-              <p>
-                My approach is centred on making systems work better: simplifying, structuring,
-                and making processes easier for teams to use while still meeting modern food
-                safety and quality standards. A key part of my work is turning day-to-day
-                factory activity into structured, trendable data that actually tells a story:
-                from digitising audits and building operational tools to analysing root causes
-                and performance trends.
-              </p>
-              <p>
-                I enjoy working at the intersection of operations, quality, and data. The goal
-                is always the same: practical systems that support teams on the floor, improve
-                decision-making, and strengthen food safety without adding unnecessary complexity.
-              </p>
+      <div className="cv-section">
+        <h2>Experience.</h2>
+        {experience.map((job) => (
+          <section
+            className="cv-entry card-print-safe"
+            key={job.role + job.period}
+          >
+            <div>
+              <p className="eyebrow">{job.period}</p>
+              <h3>{job.role}</h3>
+              <p>{job.company}</p>
+              <p className="caption">{job.location}</p>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Career Timeline */}
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <Clock size={18} className="text-[#22c55e]" />
-            <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Career Timeline
-            </h2>
-          </div>
-          <div className="relative pl-8">
-            <div className="absolute left-3 top-2 bottom-2 w-0.5 bg-[#D5D1C9]" />
-            <div className="space-y-7">
-              {experience.map((job, index) => {
-                const color = companyColors[job.company] ?? "#7A7870";
-                return (
-                  <div key={index} className="relative">
-                    <div
-                      className="absolute -left-8 top-1 w-4 h-4 rounded-full border-2 bg-white"
-                      style={{ borderColor: color }}
-                    />
-                    <p
-                      className="text-[10px] font-medium uppercase tracking-widest text-[#7A7870] mb-0.5"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}
-                    >
-                      {job.period}
-                    </p>
-                    <p
-                      className="text-sm font-black text-[#1C1C1A] leading-tight"
-                      style={{ fontFamily: '"Syne", sans-serif' }}
-                    >
-                      {job.role}
-                    </p>
-                    <p
-                      className="text-sm font-semibold"
-                      style={{ color, fontFamily: '"DM Sans", sans-serif' }}
-                    >
-                      {job.company}
-                    </p>
-                  </div>
-                );
-              })}
+            <div>
+              <p>{job.description}</p>
+              <ul>
+                {job.achievements.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
-
-        {/* Experience */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <Briefcase size={18} className="text-[#22c55e]" />
-            <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Experience
-            </h2>
-          </div>
-          <div className="space-y-5">
-            {experience.map((job, index) => (
-              <Card key={index} variant="default">
-                <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                    <div>
-                      <CardTitle>{job.role}</CardTitle>
-                      <p
-                        className="text-sm font-semibold text-[#F59E0B] mt-0.5"
-                        style={{ fontFamily: '"DM Sans", sans-serif' }}
-                      >
-                        {job.company}
-                      </p>
-                    </div>
-                    <div className="flex flex-wrap gap-2 shrink-0">
-                      <Badge variant="green">{durationFromPeriod(job.period)}</Badge>
-                      <Badge variant="default">{job.type}</Badge>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <div className="flex items-center gap-1.5 text-xs text-[#7A7870]"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                      <MapPin size={11} />
-                      <span>{job.location}</span>
-                    </div>
-                    <span
-                      className="text-xs text-[#7A7870]"
-                      style={{ fontFamily: '"DM Sans", sans-serif' }}
-                    >
-                      {job.period}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p
-                    className="text-sm text-[#1C1C1A] leading-relaxed mb-4"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {job.description}
-                  </p>
-                  <p
-                    className="text-xs font-bold text-[#22c55e] uppercase tracking-wide mb-2"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    Key achievements:
-                  </p>
-                  <ul className="space-y-1.5 mb-4">
-                    {job.achievements.map((achievement, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-[#7A7870] leading-relaxed"
-                        style={{ fontFamily: '"DM Sans", sans-serif' }}
-                      >
-                        <span className="text-[#22c55e] shrink-0 mt-0.5">▸</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {job.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {job.tags.map((tag) => (
-                        <Badge key={tag} variant="default">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <Wrench size={18} className="text-[#22c55e]" />
-            <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Skills
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillGroups.map((group) => (
-              <Card key={group.category} variant="default">
-                <CardHeader>
-                  <CardTitle>{group.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill) => (
-                      <Badge key={skill} variant="green">{skill}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <Award size={18} className="text-[#22c55e]" />
-            <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Certifications
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => (
-              <Card key={index} variant="default">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Award size={14} className="text-[#F59E0B]" />
-                    <Badge variant={cert.color}>{cert.type}</Badge>
-                  </div>
-                  <CardTitle>{cert.qualification}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p
-                    className="text-sm text-[#7A7870]"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {cert.institution}
-                  </p>
-                  <p
-                    className="text-sm font-semibold text-[#F59E0B] mt-1"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {cert.year}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Education */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <GraduationCap size={18} className="text-[#22c55e]" />
-            <h2
-              className="text-xl font-black text-[#1C1C1A]"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Education
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {formalEducation.map((edu, index) => (
-              <Card key={index} variant="default">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <GraduationCap size={14} className="text-[#7A7870]" />
-                    <Badge variant="default">Further Education</Badge>
-                  </div>
-                  <CardTitle>{edu.qualification}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p
-                    className="text-sm text-[#7A7870]"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {edu.institution}
-                  </p>
-                  <p
-                    className="text-sm font-semibold text-[#F59E0B] mt-1"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    {edu.period}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <Card variant="green" className="text-center no-print">
-          <CardContent className="py-8">
-            <p
-              className="text-lg font-bold text-[#1C1C1A] mb-6"
-              style={{ fontFamily: '"Syne", sans-serif' }}
-            >
-              Interested in working together?
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="mailto:dale@cgrv.co.uk">
-                <Button variant="primary" size="md">
-                  <Mail size={14} className="mr-2" />
-                  Get in Touch
-                </Button>
-              </Link>
-              <Link href="https://www.linkedin.com/in/dale-cosgrove-738a18a4" target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="md">
-                  <Linkedin size={14} className="mr-2" />
-                  Connect
-                </Button>
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
+          </section>
+        ))}
       </div>
+      <section className="cv-section">
+        <h2>Skills.</h2>
+        <div className="cv-grid">
+          {skillGroups.map((group) => (
+            <div className="cv-skill card-print-safe" key={group.category}>
+              <h3>{group.category}</h3>
+              <p>{group.skills.join(" / ")}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="cv-section">
+        <h2>Certifications.</h2>
+        <div className="cv-grid">
+          {certifications.map((cert) => (
+            <div className="cv-skill card-print-safe" key={cert.qualification}>
+              <h3>{cert.qualification}</h3>
+              <p>
+                {cert.institution} / {cert.year}
+              </p>
+              <p className="eyebrow">{cert.type}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="cv-section">
+        <h2>Education.</h2>
+        {formalEducation.map((edu) => (
+          <div className="cv-skill card-print-safe" key={edu.qualification}>
+            <h3>{edu.qualification}</h3>
+            <p>
+              {edu.institution} / {edu.period}
+            </p>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

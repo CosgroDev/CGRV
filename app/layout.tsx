@@ -6,9 +6,9 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cgrv.co.uk"),
-  title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
+  title: "CGRV | Dale Cosgrove’s Personal Workshop",
   description:
-    "Portfolio of Dale Cosgrove, Food Safety Professional and Tech Enthusiast. Projects & Performance specialist at FBC UK with a passion for technology, data, and innovation.",
+    "The personal workshop of Dale Cosgrove. Food safety, quality, data, practical tools and curious experiments.",
   keywords: [
     "Dale Cosgrove",
     "Food Safety",
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dale Cosgrove" }],
   openGraph: {
-    title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
+    title: "CGRV | Dale Cosgrove’s Personal Workshop",
     description:
-      "Food Safety Professional turned data-driven tech enthusiast. Projects & Performance specialist at FBC UK. Explore the portfolio.",
+      "Food safety, quality, useful tools and curious experiments from Dale Cosgrove’s personal workshop.",
     type: "website",
     url: "https://cgrv.co.uk",
-    siteName: "Dale Cosgrove",
+    siteName: "CGRV",
     images: [
       {
         url: "https://cgrv.co.uk/opengraph-image",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dale Cosgrove | Food Safety Professional & Tech Enthusiast",
+    title: "CGRV | Dale Cosgrove’s Personal Workshop",
     description:
-      "Food Safety Professional turned data-driven tech enthusiast. Projects & Performance specialist at FBC UK. Explore the portfolio.",
+      "Food safety, quality, useful tools and curious experiments from Dale Cosgrove’s personal workshop.",
     images: ["https://cgrv.co.uk/opengraph-image"],
   },
 };
@@ -54,9 +54,7 @@ const personJsonLd = {
     "@type": "Organization",
     name: "FBC UK",
   },
-  sameAs: [
-    "https://www.linkedin.com/in/dale-cosgrove-738a18a4",
-  ],
+  sameAs: ["https://www.linkedin.com/in/dale-cosgrove-738a18a4"],
 };
 
 export default function RootLayout({
@@ -67,13 +65,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics />
-      <body className="min-h-screen flex flex-col bg-[#F6F4EF]">
+      <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
