@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CGRV / Dale Cosgrove’s personal workshop
 
-## Getting Started
+A Next.js personal site with a retro workshop design: paper, ink, cobalt blue, stamped labels and hard borders.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Production build: `npm run build`. Start that build: `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/`: introduction, featured projects, tools, recent notes and contact.
+- `/projects`: project index with individual project pages.
+- `/toolbox`: list cleaning/comparison and JSON validation/formatting. Inputs are processed in the browser and are not persisted by the tools.
+- `/blog`: existing MDX notes with the new visual style.
+- `/about` and `/cv`: background, interests and printable experience.
+- `/workspace`: clearly marked, unconnected workspace information. No authentication or private storage is active.
 
-## Learn More
+Project content lives in `lib/workshop.ts`. Add notes as MDX files with frontmatter in `content/posts/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Verification
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run build
+node --test tests/workshop.test.cjs
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The list tests cover deduplication, mixed line endings, empty inputs, comparison and optional case-insensitive matching. The production build includes TypeScript validation.
 
-## Deploy on Vercel
+Browser visual and interaction QA is still required before merging. Check desktop, tablet and mobile layout, navigation, keyboard focus, clipboard actions, JSON errors and CV printing.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Next phase
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `docs/private-workspace.md` for the proposed owner-only Supabase notebook and its verification requirements. No existing Supabase databases were changed.
+
+This branch is intended for review before replacing the live website.

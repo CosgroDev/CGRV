@@ -11,7 +11,7 @@ export default function AppleIcon() {
         style={{
           width: "180px",
           height: "180px",
-          background: "#1C1C1A",
+          background: "#2446ff",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -20,7 +20,7 @@ export default function AppleIcon() {
       >
         <span
           style={{
-            color: "#22c55e",
+            color: "#f2ebdd",
             fontSize: "128px",
             fontWeight: 900,
             fontFamily: "sans-serif",
@@ -33,6 +33,6 @@ export default function AppleIcon() {
         </span>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

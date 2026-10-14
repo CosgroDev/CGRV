@@ -1,18 +1,11 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-
 export function PrintCVButton() {
   return (
-    <Button
-      variant="primary"
-      size="sm"
-      className="w-full sm:w-auto"
+    <button
+      className="work-button blue-button no-print"
       onClick={() => window.print()}
     >
-      <Download size={12} className="mr-2" />
-      Save as PDF
-    </Button>
+      Print / save as PDF ↗
+    </button>
   );
 }

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { projects } from "@/lib/workshop";
 import { getPosts } from "@/lib/posts";
 
 const BASE_URL = "https://cgrv.co.uk";
@@ -32,5 +33,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [
+    ...staticPages,
+    ...["/projects", "/toolbox", "/about"].map((path) => ({
+      url: `${BASE_URL}${path}`,
+    })),
+    ...projects.map((project) => ({
+      url: `${BASE_URL}/projects/${project.slug}`,
+    })),
+    ...blogPages,
+  ];
 }
