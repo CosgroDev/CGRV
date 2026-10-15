@@ -287,8 +287,10 @@ a.ws-project:hover {
   background: var(--paper);
   color: var(--ink);
   font:
-    14px Arial,
+    16px Arial,
     sans-serif;
+  /* Keep controls readable without triggering mobile Safari's focus zoom. */
+  min-height: 44px;
   min-width: 0;
   border-radius: 0;
 }
@@ -409,7 +411,6 @@ a.ws-project:hover {
 }
 .ws-move-form select {
   padding: 8px;
-  font-size: 12px;
 }
 .ws-column-empty {
   font-size: 12px;
