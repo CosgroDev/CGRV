@@ -1,5 +1,6 @@
 import { ActionForm } from "./action-form";
 import { Submit } from "./submit";
+import { AutoTextarea } from "./auto-textarea";
 import type { Note, Project, Task } from "@/lib/workspace/types";
 import { statusLabels, taskStatuses } from "@/lib/workspace/types";
 
@@ -28,7 +29,7 @@ export function ProjectForm({ project }: { project?: Project }) {
       </label>
       <label>
         Description
-        <textarea
+        <AutoTextarea
           name="description"
           maxLength={10000}
           rows={3}
@@ -71,7 +72,7 @@ export function NoteForm({
       </label>
       <label>
         Note
-        <textarea
+        <AutoTextarea
           name="body"
           rows={6}
           maxLength={50000}
@@ -106,7 +107,7 @@ export function TaskForm({
       </label>
       <label>
         Details
-        <textarea
+        <AutoTextarea
           name="description"
           rows={2}
           maxLength={10000}

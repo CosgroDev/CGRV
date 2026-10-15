@@ -293,17 +293,37 @@ a.ws-project:hover {
   min-height: 44px;
   min-width: 0;
   border-radius: 0;
+  max-width: 100%;
 }
 .ws-form textarea {
-  resize: vertical;
+  resize: none;
+  overflow-y: hidden;
+}
+.ws-form input[type="date"] {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+.ws-form input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+.ws-form input[type="date"]::-webkit-datetime-edit {
+  min-width: 0;
+  padding: 0;
 }
 .ws-form .work-button {
   justify-self: start;
 }
 .ws-input-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  min-width: 0;
+}
+.ws-task-card .ws-input-pair {
+  grid-template-columns: minmax(0, 1fr);
 }
 .ws-notice {
   padding: 14px;
@@ -559,6 +579,6 @@ select:focus-visible {
     align-items: start;
   }
   .ws-input-pair {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
