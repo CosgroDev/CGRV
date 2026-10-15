@@ -1,15 +1,18 @@
 # CGRV / Dale Cosgrove’s personal workshop
 
-A Next.js personal site with a retro workshop design: paper, ink, cobalt blue, stamped labels and hard borders.
+A Next.js-compatible personal site (vinext on Cloudflare Workers) with a retro workshop design: paper, ink, cobalt blue, stamped labels and hard borders.
 
 ## Run locally
 
 ```sh
 npm ci
-npm run dev
+npm run dev       # http://localhost:3001
+npm run build     # production build for Cloudflare Workers (vinext)
+npm run preview   # run the built Worker locally, http://localhost:4173
+npm run deploy    # deploy to Cloudflare Workers
 ```
 
-Open http://localhost:3000. Production build: `npm run build`. Start that build: `npm start`.
+Hosted on Cloudflare Workers via [vinext](https://vinext.dev/). Blog posts are compiled at build time because Workers have no filesystem.
 
 ## Pages
 
@@ -26,7 +29,7 @@ Project content lives in `lib/workshop.ts`. Add notes as MDX files with frontmat
 
 ```sh
 npm run build
-node --test tests/workshop.test.cjs
+npm test
 ```
 
 The list tests cover deduplication, mixed line endings, empty inputs, comparison and optional case-insensitive matching. The production build includes TypeScript validation.

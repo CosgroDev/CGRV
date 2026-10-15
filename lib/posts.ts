@@ -1,12 +1,12 @@
 // Blog post helpers.
 // To add a new post: create a .mdx file in content/posts/ with frontmatter.
 // The listing, sitemap, and post pages all update automatically.
+//
+// Cloudflare Workers have no filesystem and cannot compile MDX at request
+// time, so posts are compiled to React components at build time (see
+// vite.config.ts) and discovered with import.meta.glob.
 
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
-const postsDir = path.join(process.cwd(), "content/posts");
+import type { ComponentType } from "react";
 
 export type PostMeta = {
   slug: string;
@@ -17,22 +17,29 @@ export type PostMeta = {
   tags: string[];
 };
 
-export type Post = PostMeta & { content: string };
+export type Post = PostMeta & { Content: ComponentType };
+
+type PostModule = {
+  default: ComponentType;
+  frontmatter: Omit<PostMeta, "slug">;
+};
+
+const modules = import.meta.glob<PostModule>("/content/posts/*.mdx", {
+  eager: true,
+});
+
+const posts: Post[] = Object.entries(modules)
+  .map(([file, mod]) => ({
+    slug: file.replace(/^.*\//, "").replace(/\.mdx$/, ""),
+    ...mod.frontmatter,
+    Content: mod.default,
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getPosts(): PostMeta[] {
-  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
-  return files
-    .map((file) => {
-      const slug = file.replace(/\.mdx$/, "");
-      const { data } = matter(fs.readFileSync(path.join(postsDir, file), "utf8"));
-      return { slug, ...(data as Omit<PostMeta, "slug">) };
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return posts.map(({ Content: _content, ...meta }) => meta);
 }
 
 export function getPost(slug: string): Post | undefined {
-  const filePath = path.join(postsDir, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return undefined;
-  const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
-  return { slug, ...(data as Omit<PostMeta, "slug">), content };
+  return posts.find((p) => p.slug === slug);
 }

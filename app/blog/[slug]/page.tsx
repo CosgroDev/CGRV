@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPost, getPosts } from "@/lib/posts";
 export function generateStaticParams() {
   return getPosts().map((post) => ({ slug: post.slug }));
@@ -26,6 +25,7 @@ export default async function PostPage({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
+  const { Content } = post;
   return (
     <article className="wrap section">
       <Link className="text-link" href="/blog">
@@ -39,7 +39,7 @@ export default async function PostPage({
         <p>{post.description}</p>
       </div>
       <div className="prose article-copy">
-        <MDXRemote source={post.content} />
+        <Content />
       </div>
     </article>
   );
