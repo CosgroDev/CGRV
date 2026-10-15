@@ -39,19 +39,27 @@ export function Nav() {
           aria-label="Main navigation"
           className={open ? "main-nav is-open" : "main-nav"}
         >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-              {link.href === "/workspace" ? (
-                <span aria-hidden="true"> ↗</span>
-              ) : null}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href === "/workspace" ? (
+              <a key={link.href} href={link.href}>
+                Workspace ↗
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={
+                  pathname.startsWith(link.href) ? "page" : undefined
+                }
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+                {link.href === "/workspace" ? (
+                  <span aria-hidden="true"> ↗</span>
+                ) : null}
+              </Link>
+            ),
+          )}
         </nav>
       </div>
     </header>

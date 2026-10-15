@@ -18,7 +18,7 @@ Open http://localhost:3000. Production build: `npm run build`. Start that build:
 - `/toolbox`: list cleaning/comparison and JSON validation/formatting. Inputs are processed in the browser and are not persisted by the tools.
 - `/blog`: existing MDX notes with the new visual style.
 - `/about` and `/cv`: background, interests and printable experience.
-- `/workspace`: clearly marked, unconnected workspace information. No authentication or private storage is active.
+- `/workspace`: Workbench, the owner-only dashboard with connected projects, notes and task boards. Requires Supabase configuration and owner activation.
 
 Project content lives in `lib/workshop.ts`. Add notes as MDX files with frontmatter in `content/posts/`.
 
@@ -35,6 +35,6 @@ Browser visual and interaction QA is still required before merging. Check deskto
 
 ## Next phase
 
-See `docs/private-workspace.md` for the proposed owner-only Supabase notebook and its verification requirements. No existing Supabase databases were changed.
+See `docs/private-workspace.md` for Workbench setup, owner activation, architecture and verification. The dedicated CGRV Supabase project contains the workspace schema; FoodRisk Applications was not changed.
 
 This branch is intended for review before replacing the live website.

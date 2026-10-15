@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import { GoogleAnalytics } from "@/components/google-analytics";
+import { SiteFrame } from "@/components/site-frame";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cgrv.co.uk"),
@@ -64,17 +62,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <Nav />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
   );
